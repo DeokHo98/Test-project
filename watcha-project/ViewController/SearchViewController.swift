@@ -30,4 +30,10 @@ class SearchViewController: UIViewController {
     private func setAttribute() {
         view.backgroundColor = .black
     }
+    private func setLayout() {
+        [searchTextField].forEach {
+            view.addSubview($0)
+        }
+        searchTextField.anchor(top: view.safeAreaLayoutGuide.topAnchor,leading: view.leadingAnchor,trailing: view.trailingAnchor,height: 50)
+    }
 }
