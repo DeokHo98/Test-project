@@ -7,15 +7,15 @@
 
 import Foundation
 
-final class TrendingViewModel {
-    let service = WebService()
+final class TrendingKeyWordViewModel {
+    let service = TrendingKeyWordService()
     
-    var model: TrendingModel = TrendingModel.EMPTY
-    var serviceError: Observable<WebServiceError> = Observable(.jsonDecodeError)
+    var model: TrendingKeyWordModel = TrendingKeyWordModel.EMPTY
+    var serviceError: Observable<ServiceError> = Observable(.jsonDecodeError)
     var fetchSuccess: Observable<Bool> = Observable(false)
 }
 
-extension TrendingViewModel {
+extension TrendingKeyWordViewModel {
     var count: Int {
         let prefix = self.model.data.prefix(5)
         return prefix.count

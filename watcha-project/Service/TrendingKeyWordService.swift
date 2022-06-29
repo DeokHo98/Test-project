@@ -7,17 +7,8 @@
 
 import Foundation
 
-enum WebServiceError: Error {
-    case URLError
-    case fetchError
-    case dataError
-    case responseError
-    case jsonDecodeError
-}
-
-
-struct WebService {
-    func fetch(url: String, completion: @escaping (Result<TrendingModel,WebServiceError>) -> Void) {
+struct TrendingKeyWordService {
+    func fetch(url: String, completion: @escaping (Result<TrendingKeyWordModel,ServiceError>) -> Void) {
         guard let url = URL(string: url) else {
             completion(.failure(.URLError))
             return
@@ -35,7 +26,7 @@ struct WebService {
                 return
             }
             do {
-                let result = try JSONDecoder().decode(TrendingModel.self, from: data)
+                let result = try JSONDecoder().decode(TrendingKeyWordModel.self, from: data)
                     completion(.success(result))
             } catch {
                 completion(.failure(.jsonDecodeError))
