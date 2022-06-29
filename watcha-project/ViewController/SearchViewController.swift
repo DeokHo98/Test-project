@@ -9,8 +9,17 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    //MARK: - Property
+    
+    //MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setLayout()
     }
     
+    //MARK: - HelperFunction
+    private func setAttribute() {
+        view.backgroundColor = .black
+    }
 }
