@@ -43,11 +43,13 @@ class TrendingCell: UICollectionViewCell {
     //MARK: - HelperFunction
     
     private func setLayout() {
-        [imageView].forEach {
+        [imageView, keywordLabel].forEach {
             addSubview($0)
         }
         imageView.centerY(inView: self)
         imageView.anchor(leading: self.leadingAnchor, paddingLeading: 10, width: 25, height: 25)
+        keywordLabel.centerY(inView: self)
+        keywordLabel.anchor(leading: imageView.trailingAnchor, trailing: self.trailingAnchor, paddingLeading: 10, paddingTrailing: 10)
     }
     
 }
