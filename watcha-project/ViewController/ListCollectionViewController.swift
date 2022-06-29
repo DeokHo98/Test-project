@@ -25,15 +25,19 @@ class ListCollectionViewController: UICollectionViewController {
                 item.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
                 let group = NSCollectionLayoutGroup.vertical(
                    layoutSize: .init(widthDimension: .fractionalWidth(1),
-                                     heightDimension: .estimated(50)),
+                                     heightDimension: .estimated(45)),
                    subitems: [item]
                 )
                 group.contentInsets.top = 10
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .none
                 section.boundarySupplementaryItems = [
+                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1),
+                                            heightDimension: .estimated(50)),
+                          elementKind: UICollectionView.elementKindSectionHeader,
+                          alignment: .topLeading)
                 ]
-                section.contentInsets = .init(top: 20, leading: 0, bottom: 0, trailing: 0)
+                section.contentInsets = .init(top: -10, leading: 0, bottom: 0, trailing: 0)
                 return section
             default:
                 return NSCollectionLayoutSection(
@@ -65,6 +69,7 @@ class ListCollectionViewController: UICollectionViewController {
     func setCell() {
         collectionView.register(TrendingCell.self, forCellWithReuseIdentifier: TrendingCell.identifier)
         collectionView.register(MostPopularCell.self, forCellWithReuseIdentifier: MostPopularCell.identifier)
+        collectionView.register(ListCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ListCellHeader.identifier)
     }
     func setBinding() {
         trendingViewModel.fetchSuccess.bind { [weak self] _ in
@@ -94,6 +99,20 @@ class ListCollectionViewController: UICollectionViewController {
             return cell
         default:
             return UICollectionViewCell()
+        }
+    }
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ListCellHeader.identifier, for: indexPath) as! ListCellHeader
+        if kind == UICollectionView.elementKindSectionHeader {
+            switch indexPath.section {
+            case 0:
+                header.label.text = "Trending Searches"
+                return header
+            default:
+                return UICollectionReusableView()
+            }
+        } else {
+            return UICollectionReusableView()
         }
     }
 }
