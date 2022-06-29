@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Observable<T> {    
+final class Observer<T> {
     typealias Listener = (T) -> Void
     var listener: Listener?
     var value: T {
@@ -15,11 +15,10 @@ final class Observable<T> {
             listener?(value)
         }
     }
-    init(_ value: T) {
-        self.value = value
+    func bind(completion: @escaping (T) -> Void) {
+        self.listener = completion
     }
-    func bind(listener: Listener?) {
-        self.listener = listener
-        listener?(value)
+    init(value: T) {
+        self.value = value
     }
 }
