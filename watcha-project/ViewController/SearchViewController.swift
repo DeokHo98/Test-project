@@ -24,11 +24,16 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLayout()
+        setAttribute()
+        setNavigation()
     }
     
     //MARK: - HelperFunction
     private func setAttribute() {
         view.backgroundColor = .black
+    }
+    private func setNavigation() {
+        navigationController?.navigationBar.isHidden = true
     }
     private func setLayout() {
         [searchTextField].forEach {
