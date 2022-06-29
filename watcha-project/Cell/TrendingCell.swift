@@ -17,7 +17,8 @@ class TrendingCell: UICollectionViewCell {
     private let imageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "arrow.up.right")
-        iv.backgroundColor = .clear
+        iv.backgroundColor = .white
+        iv.tintColor = .systemBlue
         return iv
     }()
     
@@ -25,9 +26,21 @@ class TrendingCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .red
+        setLayout()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: - HelperFunction
+    
+    private func setLayout() {
+        [imageView].forEach {
+            addSubview($0)
+        }
+        imageView.centerY(inView: self)
+        imageView.anchor(leading: self.leadingAnchor, paddingLeading: 10, width: 25, height: 25)
     }
     
 }
