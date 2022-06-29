@@ -14,14 +14,18 @@ class TrendingCell: UICollectionViewCell {
     static let identifier = "TrendingCell"
     
     //MARK: - Property
-
+    var viewModel: TrendingKeyWordViewModelItem? {
+        didSet {
+            setViewModel()
+        }
+    }
     private let imageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "arrow.up.right")
         iv.tintColor = .systemBlue
         return iv
     }()
-     let keywordLabel: UILabel = {
+    private let keywordLabel: UILabel = {
         let lb = UILabel()
         lb.font = .boldSystemFont(ofSize: 20)
         lb.textColor = .white
@@ -49,5 +53,11 @@ class TrendingCell: UICollectionViewCell {
         imageView.anchor(leading: self.leadingAnchor, paddingLeading: 10, width: 23, height: 23)
         keywordLabel.centerY(inView: self)
         keywordLabel.anchor(leading: imageView.trailingAnchor, trailing: self.trailingAnchor, paddingLeading: 10, paddingTrailing: 10)
+    }
+    private func setViewModel() {
+        guard let viewModel = viewModel else {
+            return
+        }
+        keywordLabel.text = viewModel.keyword
     }
 }

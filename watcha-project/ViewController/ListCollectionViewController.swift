@@ -10,7 +10,7 @@ import UIKit
 class ListCollectionViewController: UICollectionViewController {
 
     //MARK: - Property
-    var trendingViewModel: TrendingKeyWordViewModel = TrendingKeyWordViewModel()
+    var trendingViewModel: TrendingKeyWordViewModelList = TrendingKeyWordViewModelList()
     
     //MARK: - lifeCycle
     
@@ -87,7 +87,7 @@ class ListCollectionViewController: UICollectionViewController {
         switch indexPath.section {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCell.identifier, for: indexPath) as! TrendingCell
-            cell.keywordLabel.text = trendingViewModel.keyword(indexPath: indexPath.row)
+            cell.viewModel = trendingViewModel.itemAtIndex(indexPath.row)
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MostPopularCell.identifier, for: indexPath) as! MostPopularCell

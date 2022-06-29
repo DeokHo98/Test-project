@@ -7,29 +7,29 @@
 
 import Foundation
 
-final class TrendingKeyWordViewModel {
-    let service = TrendingKeyWordService()
-    
-    var model: TrendingKeyWordModel = TrendingKeyWordModel.EMPTY
+final class TrendingKeyWordViewModelList {
+    private let service = TrendingKeyWordService()
+    private var items: [TrendingKeyWordViewModelItem] = []
     var serviceError: Observable<ServiceError> = Observable(.jsonDecodeError)
     var fetchSuccess: Observable<Bool> = Observable(false)
 }
 
-extension TrendingKeyWordViewModel {
+extension TrendingKeyWordViewModelList {
     var count: Int {
-        let prefix = self.model.data.prefix(5)
-        return prefix.count
+        return items.count
     }
-    func keyword(indexPath: Int) -> String {
-        let prefix = self.model.data.prefix(5)
-        return prefix[indexPath]
+    func itemAtIndex(_ index: Int) -> TrendingKeyWordViewModelItem {
+        return items[index]
     }
     func fetchTrandingKeword() {
         let url = "https://api.giphy.com/v1/trending/searches?api_key=MjCPlYY5U7JKYjuCuWac3SSmrropRpI1"
         service.fetch(url: url) { [weak self] result in
             switch result {
             case .success(let model):
-                self?.model = model
+                let items = model.data.prefix(5).map {
+                    TrendingKeyWordViewModelItem(data: $0)
+                }
+                self?.items = items
                 DispatchQueue.main.async {
                     self?.fetchSuccess.value = true
                 }
@@ -42,3 +42,10 @@ extension TrendingKeyWordViewModel {
     }
 }
 
+final class TrendingKeyWordViewModelItem {
+    
+    init(data: String) {
+        self.keyword = data
+    }
+    let keyword: String
+}

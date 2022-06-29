@@ -46,7 +46,7 @@ class SearchViewController: UIViewController {
     }
     
     //MARK: - HelperFunction
-    
+     
     private func setAttribute() {
         view.backgroundColor = .black
     }
