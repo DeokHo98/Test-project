@@ -34,6 +34,7 @@ class SearchViewController: UIViewController {
         }
         return bt
     }()
+    private let listCollectionView: UICollectionViewController = ListCollectionViewController()
     
     //MARK: - LifeCycle
     
@@ -53,7 +54,7 @@ class SearchViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
     private func setLayout() {
-        [searchButton,searchTextField].forEach {
+        [searchButton,searchTextField,listCollectionView.view].forEach {
             view.addSubview($0)
         }
         searchButton.anchor(
@@ -67,6 +68,12 @@ class SearchViewController: UIViewController {
             leading: view.leadingAnchor,
             trailing: searchButton.leadingAnchor,
             height: 50
+        )
+        listCollectionView.view.anchor(
+            top: searchTextField.bottomAnchor,
+            leading: view.leadingAnchor,
+            bottom: view.safeAreaLayoutGuide.bottomAnchor,
+            trailing: view.trailingAnchor
         )
     }
 }

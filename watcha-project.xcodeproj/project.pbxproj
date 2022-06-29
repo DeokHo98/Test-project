@@ -17,6 +17,7 @@
 		FEC44E80286C09D200EEAF16 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E7F286C09D200EEAF16 /* SearchViewController.swift */; };
 		FEC44E82286C0CB100EEAF16 /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E81286C0CB100EEAF16 /* AutoLayout.swift */; };
 		FEC44E86286C1B2200EEAF16 /* ListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E85286C1B2200EEAF16 /* ListCollectionViewController.swift */; };
+		FEC44E89286C1D9F00EEAF16 /* TrendingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E88286C1D9F00EEAF16 /* TrendingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		FEC44E7F286C09D200EEAF16 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FEC44E81286C0CB100EEAF16 /* AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
 		FEC44E85286C1B2200EEAF16 /* ListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewController.swift; sourceTree = "<group>"; };
+		FEC44E88286C1D9F00EEAF16 /* TrendingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				FEC44E7B286C091E00EEAF16 /* Service */,
 				FEC44E7A286C090A00EEAF16 /* ViewModel */,
 				FEC44E79286C08FD00EEAF16 /* ViewController */,
+				FEC44E87286C1CB100EEAF16 /* Cell */,
 			);
 			path = "watcha-project";
 			sourceTree = "<group>";
@@ -176,6 +179,14 @@
 				FEC44E57286C07DE00EEAF16 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		FEC44E87286C1CB100EEAF16 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FEC44E88286C1D9F00EEAF16 /* TrendingCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +321,7 @@
 			files = (
 				FEC44E80286C09D200EEAF16 /* SearchViewController.swift in Sources */,
 				FEC44E4A286C07DD00EEAF16 /* AppDelegate.swift in Sources */,
+				FEC44E89286C1D9F00EEAF16 /* TrendingCell.swift in Sources */,
 				FEC44E86286C1B2200EEAF16 /* ListCollectionViewController.swift in Sources */,
 				FEC44E82286C0CB100EEAF16 /* AutoLayout.swift in Sources */,
 				FEC44E4C286C07DD00EEAF16 /* SceneDelegate.swift in Sources */,
