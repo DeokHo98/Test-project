@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FE66BEA4286C25E70085A532 /* MostPopularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE66BEA3286C25E70085A532 /* MostPopularCell.swift */; };
+		FE66BEA6286C2D4B0085A532 /* TrendingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE66BEA5286C2D4B0085A532 /* TrendingModel.swift */; };
 		FEC44E4A286C07DD00EEAF16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E49286C07DD00EEAF16 /* AppDelegate.swift */; };
 		FEC44E4C286C07DD00EEAF16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E4B286C07DD00EEAF16 /* SceneDelegate.swift */; };
 		FEC44E53286C07DE00EEAF16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC44E52286C07DE00EEAF16 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		FE66BEA3286C25E70085A532 /* MostPopularCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularCell.swift; sourceTree = "<group>"; };
+		FE66BEA5286C2D4B0085A532 /* TrendingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingModel.swift; sourceTree = "<group>"; };
 		FEC44E46286C07DD00EEAF16 /* watcha-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watcha-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC44E49286C07DD00EEAF16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC44E4B286C07DD00EEAF16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		FEC44E7C286C093000EEAF16 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FE66BEA5286C2D4B0085A532 /* TrendingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			files = (
 				FEC44E80286C09D200EEAF16 /* SearchViewController.swift in Sources */,
 				FEC44E4A286C07DD00EEAF16 /* AppDelegate.swift in Sources */,
+				FE66BEA6286C2D4B0085A532 /* TrendingModel.swift in Sources */,
 				FE66BEA4286C25E70085A532 /* MostPopularCell.swift in Sources */,
 				FEC44E89286C1D9F00EEAF16 /* TrendingCell.swift in Sources */,
 				FEC44E86286C1B2200EEAF16 /* ListCollectionViewController.swift in Sources */,
