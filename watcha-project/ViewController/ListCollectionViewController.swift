@@ -16,13 +16,23 @@ class ListCollectionViewController: UICollectionViewController {
         let layout = UICollectionViewCompositionalLayout { section, env in
             switch section {
             case 0:
-                return NSCollectionLayoutSection(
-                   group: NSCollectionLayoutGroup(
-                       layoutSize: NSCollectionLayoutSize(
-                           widthDimension: .absolute(0), heightDimension: .absolute(0)
-                       )
-                   )
+                let item = NSCollectionLayoutItem(
+                    layoutSize: .init(widthDimension: .fractionalWidth(1),
+                       heightDimension: .fractionalHeight(1))
                 )
+                item.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
+                let group = NSCollectionLayoutGroup.vertical(
+                   layoutSize: .init(widthDimension: .fractionalWidth(1),
+                                     heightDimension: .estimated(60)),
+                   subitems: [item]
+                )
+                group.contentInsets.top = 10
+                let section = NSCollectionLayoutSection(group: group)
+                section.orthogonalScrollingBehavior = .none
+                section.boundarySupplementaryItems = [
+                ]
+                section.contentInsets = .init(top: 20, leading: 0, bottom: 0, trailing: 0)
+                return section
             default:
                 return NSCollectionLayoutSection(
                    group: NSCollectionLayoutGroup(
@@ -40,6 +50,16 @@ class ListCollectionViewController: UICollectionViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        setAttribute()
+        setCell()
+    }
+    
+    //MARK: - HelperFunction
+    func setAttribute() {
+        collectionView.backgroundColor = .black
+    }
+    func setCell() {
+        collectionView.register(TrendingCell.self, forCellWithReuseIdentifier: TrendingCell.identifier)
     }
 
     //MARK: - DatSource
@@ -51,7 +71,7 @@ class ListCollectionViewController: UICollectionViewController {
         return 10
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCell.identifier, for: indexPath) as! TrendingCell
         return cell
     }
 }
