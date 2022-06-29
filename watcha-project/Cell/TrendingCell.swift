@@ -13,13 +13,19 @@ class TrendingCell: UICollectionViewCell {
     
     static let identifier = "TrendingCell"
     
+    //MARK: - Property
+    private let imageView: UIImageView = {
+        let iv = UIImageView()
+        iv.image = UIImage(systemName: "arrow.up.right")
+        iv.backgroundColor = .clear
+        return iv
+    }()
+    
     //MARK: -  lifeCycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .blue
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
