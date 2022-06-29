@@ -14,16 +14,16 @@ class TrendingCell: UICollectionViewCell {
     static let identifier = "TrendingCell"
     
     //MARK: - Property
+    
     private let imageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "arrow.up.right")
-        iv.backgroundColor = .white
         iv.tintColor = .systemBlue
         return iv
     }()
     private let keywordLabel: UILabel = {
         let lb = UILabel()
-        lb.font = .boldSystemFont(ofSize: 18)
+        lb.font = .boldSystemFont(ofSize: 20)
         lb.textColor = .white
         lb.text = "reoobtasd"
         return lb
@@ -33,7 +33,6 @@ class TrendingCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .red
         setLayout()
     }
     required init?(coder: NSCoder) {
@@ -47,7 +46,7 @@ class TrendingCell: UICollectionViewCell {
             addSubview($0)
         }
         imageView.centerY(inView: self)
-        imageView.anchor(leading: self.leadingAnchor, paddingLeading: 10, width: 25, height: 25)
+        imageView.anchor(leading: self.leadingAnchor, paddingLeading: 10, width: 23, height: 23)
         keywordLabel.centerY(inView: self)
         keywordLabel.anchor(leading: imageView.trailingAnchor, trailing: self.trailingAnchor, paddingLeading: 10, paddingTrailing: 10)
     }
