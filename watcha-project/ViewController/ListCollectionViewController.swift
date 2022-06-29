@@ -9,6 +9,8 @@ import UIKit
 
 class ListCollectionViewController: UICollectionViewController {
 
+    //MARK: - Property
+    var trendingViewModel: TrendingViewModel = TrendingViewModel()
     
     //MARK: - lifeCycle
     
@@ -23,7 +25,7 @@ class ListCollectionViewController: UICollectionViewController {
                 item.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
                 let group = NSCollectionLayoutGroup.vertical(
                    layoutSize: .init(widthDimension: .fractionalWidth(1),
-                                     heightDimension: .estimated(60)),
+                                     heightDimension: .estimated(50)),
                    subitems: [item]
                 )
                 group.contentInsets.top = 10
@@ -50,8 +52,10 @@ class ListCollectionViewController: UICollectionViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        trendingViewModel.fetchTrandingKeword()
         setAttribute()
         setCell()
+        setBinding()
     }
     
     //MARK: - HelperFunction
@@ -60,6 +64,15 @@ class ListCollectionViewController: UICollectionViewController {
     }
     func setCell() {
         collectionView.register(TrendingCell.self, forCellWithReuseIdentifier: TrendingCell.identifier)
+        collectionView.register(MostPopularCell.self, forCellWithReuseIdentifier: MostPopularCell.identifier)
+    }
+    func setBinding() {
+        trendingViewModel.fetchSuccess.bind { [weak self] _ in
+            self?.collectionView.reloadData()
+        }
+        trendingViewModel.serviceError.bind { [weak self] _ in
+            self?.collectionView.reloadData()
+        }
     }
 
     //MARK: - DatSource
@@ -68,10 +81,19 @@ class ListCollectionViewController: UICollectionViewController {
         return 1
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return trendingViewModel.count
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCell.identifier, for: indexPath) as! TrendingCell
-        return cell
+        switch indexPath.section {
+        case 0:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCell.identifier, for: indexPath) as! TrendingCell
+            cell.keywordLabel.text = trendingViewModel.keyword(indexPath: indexPath.row)
+            return cell
+        case 1:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MostPopularCell.identifier, for: indexPath) as! MostPopularCell
+            return cell
+        default:
+            return UICollectionViewCell()
+        }
     }
 }

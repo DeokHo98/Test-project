@@ -14,14 +14,14 @@ class TrendingCell: UICollectionViewCell {
     static let identifier = "TrendingCell"
     
     //MARK: - Property
-    
+
     private let imageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "arrow.up.right")
         iv.tintColor = .systemBlue
         return iv
     }()
-    private let keywordLabel: UILabel = {
+     let keywordLabel: UILabel = {
         let lb = UILabel()
         lb.font = .boldSystemFont(ofSize: 20)
         lb.textColor = .white
@@ -50,5 +50,4 @@ class TrendingCell: UICollectionViewCell {
         keywordLabel.centerY(inView: self)
         keywordLabel.anchor(leading: imageView.trailingAnchor, trailing: self.trailingAnchor, paddingLeading: 10, paddingTrailing: 10)
     }
-    
 }
