@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE66BEA4286C25E70085A532 /* MostPopularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE66BEA3286C25E70085A532 /* MostPopularCell.swift */; };
 		FEC44E4A286C07DD00EEAF16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E49286C07DD00EEAF16 /* AppDelegate.swift */; };
 		FEC44E4C286C07DD00EEAF16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E4B286C07DD00EEAF16 /* SceneDelegate.swift */; };
 		FEC44E53286C07DE00EEAF16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC44E52286C07DE00EEAF16 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FE66BEA3286C25E70085A532 /* MostPopularCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularCell.swift; sourceTree = "<group>"; };
 		FEC44E46286C07DD00EEAF16 /* watcha-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watcha-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC44E49286C07DD00EEAF16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC44E4B286C07DD00EEAF16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,7 +111,6 @@
 				FEC44E7B286C091E00EEAF16 /* Service */,
 				FEC44E7A286C090A00EEAF16 /* ViewModel */,
 				FEC44E79286C08FD00EEAF16 /* ViewController */,
-				FEC44E87286C1CB100EEAF16 /* Cell */,
 			);
 			path = "watcha-project";
 			sourceTree = "<group>";
@@ -134,6 +135,7 @@
 		FEC44E79286C08FD00EEAF16 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				FEC44E87286C1CB100EEAF16 /* Cell */,
 				FEC44E7F286C09D200EEAF16 /* SearchViewController.swift */,
 				FEC44E85286C1B2200EEAF16 /* ListCollectionViewController.swift */,
 			);
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				FEC44E88286C1D9F00EEAF16 /* TrendingCell.swift */,
+				FE66BEA3286C25E70085A532 /* MostPopularCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			files = (
 				FEC44E80286C09D200EEAF16 /* SearchViewController.swift in Sources */,
 				FEC44E4A286C07DD00EEAF16 /* AppDelegate.swift in Sources */,
+				FE66BEA4286C25E70085A532 /* MostPopularCell.swift in Sources */,
 				FEC44E89286C1D9F00EEAF16 /* TrendingCell.swift in Sources */,
 				FEC44E86286C1B2200EEAF16 /* ListCollectionViewController.swift in Sources */,
 				FEC44E82286C0CB100EEAF16 /* AutoLayout.swift in Sources */,
