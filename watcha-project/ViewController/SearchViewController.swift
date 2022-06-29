@@ -53,9 +53,15 @@ class SearchViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
     private func setLayout() {
-        [searchTextField].forEach {
+        [searchButton,searchTextField].forEach {
             view.addSubview($0)
         }
+        searchButton.anchor(
+            top: view.safeAreaLayoutGuide.topAnchor,
+            trailing: view.trailingAnchor,
+            width: 50,
+            height: 50
+        )
         searchTextField.anchor(
             top: view.safeAreaLayoutGuide.topAnchor,
             leading: view.leadingAnchor,
