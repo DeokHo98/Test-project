@@ -22,7 +22,6 @@ class ListCollectionViewController: UICollectionViewController {
                     layoutSize: .init(widthDimension: .fractionalWidth(1),
                        heightDimension: .fractionalHeight(1))
                 )
-                item.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
                 let group = NSCollectionLayoutGroup.vertical(
                    layoutSize: .init(widthDimension: .fractionalWidth(1),
                                      heightDimension: .estimated(45)),
@@ -37,7 +36,7 @@ class ListCollectionViewController: UICollectionViewController {
                           elementKind: UICollectionView.elementKindSectionHeader,
                           alignment: .topLeading)
                 ]
-                section.contentInsets = .init(top: -10, leading: 0, bottom: 0, trailing: 0)
+                section.contentInsets = .init(top: -10, leading: 0, bottom: 10, trailing: 0)
                 return section
             default:
                 return NSCollectionLayoutSection(
@@ -68,7 +67,6 @@ class ListCollectionViewController: UICollectionViewController {
     }
     func setCell() {
         collectionView.register(TrendingCell.self, forCellWithReuseIdentifier: TrendingCell.identifier)
-        collectionView.register(MostPopularCell.self, forCellWithReuseIdentifier: MostPopularCell.identifier)
         collectionView.register(ListCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ListCellHeader.identifier)
     }
     func setBinding() {
@@ -86,16 +84,16 @@ class ListCollectionViewController: UICollectionViewController {
         return 1
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return trendingViewModel.count
+        switch section {
+        case 0: return trendingViewModel.count
+        default: return 0
+        }
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCell.identifier, for: indexPath) as! TrendingCell
             cell.viewModel = trendingViewModel.itemAtIndex(indexPath.row)
-            return cell
-        case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MostPopularCell.identifier, for: indexPath) as! MostPopularCell
             return cell
         default:
             return UICollectionViewCell()
