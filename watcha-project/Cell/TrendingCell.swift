@@ -21,6 +21,13 @@ class TrendingCell: UICollectionViewCell {
         iv.tintColor = .systemBlue
         return iv
     }()
+    private let keywordLabel: UILabel = {
+        let lb = UILabel()
+        lb.font = .boldSystemFont(ofSize: 18)
+        lb.textColor = .white
+        lb.text = "reoobtasd"
+        return lb
+    }()
     
     //MARK: -  lifeCycle
     
