@@ -14,12 +14,22 @@ class MostPopularCell: UICollectionViewCell {
     
     //MARK: - Property
     
+    var viewModel: GIFViewModelItem? {
+        didSet {
+            setViewModel()
+        }
+    }
+    private let imageView: UIImageView = {
+        let iv = UIImageView()
+        return iv
+    }()
  
     //MARK: -  lifeCycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setLayout()
+        setViewModel()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -28,6 +38,15 @@ class MostPopularCell: UICollectionViewCell {
     //MARK: - HelperFunction
     
     private func setLayout() {
+        self.contentView.addSubview(imageView)
+        imageView.anchor(top: self.topAnchor, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor)
     }
-    
+    private func setViewModel() {
+        guard let viewModel = viewModel else {return}
+        ImageLoader.fetchImage(url: viewModel.gifURL) { [weak self] image in
+            guard let image = image else {return}
+            self?.imageView.image = image
+        }
+        
+    }
 }

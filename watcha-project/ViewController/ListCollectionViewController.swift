@@ -11,6 +11,7 @@ class ListCollectionViewController: UICollectionViewController {
 
     //MARK: - Property
     var trendingViewModel: TrendingKeyWordViewModelList = TrendingKeyWordViewModelList()
+    var mostPopularViewModel: GIFViewModelList = GIFViewModelList()
     
     //MARK: - lifeCycle
     
@@ -38,6 +39,26 @@ class ListCollectionViewController: UICollectionViewController {
                 ]
                 section.contentInsets = .init(top: -10, leading: 0, bottom: 10, trailing: 0)
                 return section
+            case 1:
+                let item = NSCollectionLayoutItem(
+                    layoutSize: .init(widthDimension: .fractionalWidth(1),
+                       heightDimension: .fractionalHeight(1))
+                )
+                item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+                let group = NSCollectionLayoutGroup.horizontal(
+                   layoutSize: .init(widthDimension: .fractionalWidth(1),
+                                     heightDimension: .fractionalWidth(1/3)),
+                   subitem: item, count: 2
+                )
+                let section = NSCollectionLayoutSection(group: group)
+                section.orthogonalScrollingBehavior = .none
+                section.boundarySupplementaryItems = [
+                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1),
+                                            heightDimension: .estimated(50)),
+                          elementKind: UICollectionView.elementKindSectionHeader,
+                          alignment: .topLeading)
+                ]
+                return section
             default:
                 return NSCollectionLayoutSection(
                    group: NSCollectionLayoutGroup(
@@ -55,11 +76,14 @@ class ListCollectionViewController: UICollectionViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        trendingViewModel.fetchTrandingKeword()
+        setBinding()
         setAttribute()
         setCell()
-        setBinding()
+        trendingViewModel.fetchTrandingKeword()
+        mostPopularViewModel.fetchMostPopular()
     }
+    
+    
     
     //MARK: - HelperFunction
     func setAttribute() {
@@ -67,25 +91,33 @@ class ListCollectionViewController: UICollectionViewController {
     }
     func setCell() {
         collectionView.register(TrendingCell.self, forCellWithReuseIdentifier: TrendingCell.identifier)
+        collectionView.register(MostPopularCell.self, forCellWithReuseIdentifier: MostPopularCell.identifier)
         collectionView.register(ListCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ListCellHeader.identifier)
     }
     func setBinding() {
         trendingViewModel.fetchSuccess.bind { [weak self] _ in
             self?.collectionView.reloadData()
         }
-        trendingViewModel.serviceError.bind { [weak self] _ in
+        trendingViewModel.serviceError.bind { error in
+            print("Debug: 인기 키워드 \(error) ")
+        }
+        mostPopularViewModel.fetchSuccess.bind { [weak self] _ in
             self?.collectionView.reloadData()
+        }
+        mostPopularViewModel.serviceError.bind { error in
+            print("Debug: 인기 GIF \(error)")
         }
     }
 
     //MARK: - DatSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0: return trendingViewModel.count
+        case 1: return mostPopularViewModel.count
         default: return 0
         }
     }
@@ -94,6 +126,10 @@ class ListCollectionViewController: UICollectionViewController {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCell.identifier, for: indexPath) as! TrendingCell
             cell.viewModel = trendingViewModel.itemAtIndex(indexPath.row)
+            return cell
+        case 1:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MostPopularCell.identifier, for: indexPath) as! MostPopularCell
+            cell.viewModel = mostPopularViewModel.itemAtIndex(indexPath.row)
             return cell
         default:
             return UICollectionViewCell()
@@ -106,6 +142,9 @@ class ListCollectionViewController: UICollectionViewController {
             case 0:
                 header.label.text = "Trending Searches"
                 return header
+            case 1:
+                header.label.text = "Most Popular Now"
+                return header
             default:
                 return UICollectionReusableView()
             }
@@ -113,4 +152,6 @@ class ListCollectionViewController: UICollectionViewController {
             return UICollectionReusableView()
         }
     }
+    
 }
+
