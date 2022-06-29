@@ -10,8 +10,8 @@ import Foundation
 final class TrendingKeyWordViewModelList {
     private let service = TrendingKeyWordService()
     private var items: [TrendingKeyWordViewModelItem] = []
-    var serviceError: Observable<ServiceError> = Observable(.jsonDecodeError)
-    var fetchSuccess: Observable<Bool> = Observable(false)
+    var serviceError: Observer<ServiceError> = Observer(value: .URLError)
+    var fetchSuccess: Observer<Bool> = Observer(value: false)
 }
 
 extension TrendingKeyWordViewModelList {
@@ -22,7 +22,7 @@ extension TrendingKeyWordViewModelList {
         return items[index]
     }
     func fetchTrandingKeword() {
-        let url = "https://api.giphy.com/v1/trending/searches?api_key=MjCPlYY5U7JKYjuCuWac3SSmrropRpI1"
+        let url = "https://api.giphy.com/v1/trending/searches?\(APIKey.key)"
         service.fetch(url: url) { [weak self] result in
             switch result {
             case .success(let model):
@@ -43,7 +43,6 @@ extension TrendingKeyWordViewModelList {
 }
 
 final class TrendingKeyWordViewModelItem {
-    
     init(data: String) {
         self.keyword = data
     }
