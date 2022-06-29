@@ -15,6 +15,7 @@
 		FEC44E6B286C07DE00EEAF16 /* watcha_projectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E6A286C07DE00EEAF16 /* watcha_projectUITests.swift */; };
 		FEC44E6D286C07DE00EEAF16 /* watcha_projectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E6C286C07DE00EEAF16 /* watcha_projectUITestsLaunchTests.swift */; };
 		FEC44E80286C09D200EEAF16 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E7F286C09D200EEAF16 /* SearchViewController.swift */; };
+		FEC44E82286C0CB100EEAF16 /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E81286C0CB100EEAF16 /* AutoLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		FEC44E6A286C07DE00EEAF16 /* watcha_projectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = watcha_projectUITests.swift; sourceTree = "<group>"; };
 		FEC44E6C286C07DE00EEAF16 /* watcha_projectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = watcha_projectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FEC44E7F286C09D200EEAF16 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FEC44E81286C0CB100EEAF16 /* AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		FEC44E7D286C093400EEAF16 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FEC44E81286C0CB100EEAF16 /* AutoLayout.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			files = (
 				FEC44E80286C09D200EEAF16 /* SearchViewController.swift in Sources */,
 				FEC44E4A286C07DD00EEAF16 /* AppDelegate.swift in Sources */,
+				FEC44E82286C0CB100EEAF16 /* AutoLayout.swift in Sources */,
 				FEC44E4C286C07DD00EEAF16 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
