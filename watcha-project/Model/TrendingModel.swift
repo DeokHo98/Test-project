@@ -7,6 +7,11 @@
 
 import Foundation
 
-struct TrendingModel {
-    
+// MARK: - TrendingModel
+struct TrendingModel: Decodable {
+    var data: [String]
+}
+
+extension TrendingModel {
+    static let EMPTY = TrendingModel(data: [])
 }

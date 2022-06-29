@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		FE66BEA4286C25E70085A532 /* MostPopularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE66BEA3286C25E70085A532 /* MostPopularCell.swift */; };
 		FE66BEA6286C2D4B0085A532 /* TrendingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE66BEA5286C2D4B0085A532 /* TrendingModel.swift */; };
+		FE66BEA8286C2E1B0085A532 /* TrendingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE66BEA7286C2E1B0085A532 /* TrendingService.swift */; };
+		FE66BEAC286C2FDA0085A532 /* TrendingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE66BEAB286C2FDA0085A532 /* TrendingListViewModel.swift */; };
+		FE66BEAE286C3A7B0085A532 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE66BEAD286C3A7B0085A532 /* Observable.swift */; };
 		FEC44E4A286C07DD00EEAF16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E49286C07DD00EEAF16 /* AppDelegate.swift */; };
 		FEC44E4C286C07DD00EEAF16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E4B286C07DD00EEAF16 /* SceneDelegate.swift */; };
 		FEC44E53286C07DE00EEAF16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC44E52286C07DE00EEAF16 /* Assets.xcassets */; };
@@ -42,6 +45,9 @@
 /* Begin PBXFileReference section */
 		FE66BEA3286C25E70085A532 /* MostPopularCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularCell.swift; sourceTree = "<group>"; };
 		FE66BEA5286C2D4B0085A532 /* TrendingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingModel.swift; sourceTree = "<group>"; };
+		FE66BEA7286C2E1B0085A532 /* TrendingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingService.swift; sourceTree = "<group>"; };
+		FE66BEAB286C2FDA0085A532 /* TrendingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingListViewModel.swift; sourceTree = "<group>"; };
+		FE66BEAD286C3A7B0085A532 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		FEC44E46286C07DD00EEAF16 /* watcha-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watcha-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC44E49286C07DD00EEAF16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC44E4B286C07DD00EEAF16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +153,7 @@
 		FEC44E7A286C090A00EEAF16 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FE66BEAB286C2FDA0085A532 /* TrendingListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -154,6 +161,7 @@
 		FEC44E7B286C091E00EEAF16 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				FE66BEA7286C2E1B0085A532 /* TrendingService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -170,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				FEC44E81286C0CB100EEAF16 /* AutoLayout.swift */,
+				FE66BEAD286C3A7B0085A532 /* Observable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -325,12 +334,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE66BEAE286C3A7B0085A532 /* Observable.swift in Sources */,
+				FE66BEA8286C2E1B0085A532 /* TrendingService.swift in Sources */,
 				FEC44E80286C09D200EEAF16 /* SearchViewController.swift in Sources */,
 				FEC44E4A286C07DD00EEAF16 /* AppDelegate.swift in Sources */,
 				FE66BEA6286C2D4B0085A532 /* TrendingModel.swift in Sources */,
 				FE66BEA4286C25E70085A532 /* MostPopularCell.swift in Sources */,
 				FEC44E89286C1D9F00EEAF16 /* TrendingCell.swift in Sources */,
 				FEC44E86286C1B2200EEAF16 /* ListCollectionViewController.swift in Sources */,
+				FE66BEAC286C2FDA0085A532 /* TrendingListViewModel.swift in Sources */,
 				FEC44E82286C0CB100EEAF16 /* AutoLayout.swift in Sources */,
 				FEC44E4C286C07DD00EEAF16 /* SceneDelegate.swift in Sources */,
 			);
