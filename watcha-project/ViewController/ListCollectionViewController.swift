@@ -10,7 +10,7 @@ import UIKit
 class ListCollectionViewController: UICollectionViewController {
 
     //MARK: - Property
-    var trendingViewModel: KeywordViewModel = KeywordViewModel()
+    var trendingViewModel: KeywordViewModelList = KeywordViewModelList()
     var mostPopularViewModel: GIFViewModelList = GIFViewModelList()
     
     //MARK: - lifeCycle

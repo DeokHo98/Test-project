@@ -7,23 +7,13 @@
 
 import Foundation
 
-enum GIFFetchState {
-    var url: String {
-        switch self {
-        case .mostPopular:
-            return "https://api.giphy.com/v1/gifs/trending?\(APIKey.key)&limit=20&rating=g"
-        }
-    }
-    
-    case mostPopular
-}
 
 final class GIFViewModelList {
     private let service = GIFService()
     var items: [GIFViewModelItem] = []
     var serviceError: Observer<ServiceError> = Observer(value: .URLError)
     var fetchSuccess: Observer<Bool> = Observer(value: true)
-    var fetchState: GIFFetchState = .mostPopular
+    var fetchState: APIURL = .mostPopular
     var pagingStart: Bool = false
     var offset: Int = 0
 }
@@ -87,3 +77,9 @@ final class GIFViewModelItem {
         return Int(model.images.fixedWidthStill.height) ?? 0
     }
 }
+
+
+
+
+
+//https://api.giphy.com/v1/gifs/search/tags?api_key=MjCPlYY5U7JKYjuCuWac3SSmrropRpI1&q="GOOD"&limit=10

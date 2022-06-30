@@ -7,14 +7,15 @@
 
 import Foundation
 
-final class KeywordViewModel {
+final class KeywordViewModelList {
     private let service = KeywordService()
     private var items: [TrendingKeyWordViewModelItem] = []
     var serviceError: Observer<ServiceError> = Observer(value: .URLError)
     var fetchSuccess: Observer<Bool> = Observer(value: false)
+    var fetchState: APIURL = .trendKeyword
 }
 
-extension KeywordViewModel {
+extension KeywordViewModelList {
     var count: Int {
         return items.count
     }
@@ -22,8 +23,7 @@ extension KeywordViewModel {
         return items[index]
     }
     func fetchTrandingKeword() {
-        let url = "https://api.giphy.com/v1/trending/searches?\(APIKey.key)"
-        service.fetch(url: url) { [weak self] result in
+        service.fetch(url: fetchState.url) { [weak self] result in
             switch result {
             case .success(let model):
                 let items = model.data.prefix(5).map {

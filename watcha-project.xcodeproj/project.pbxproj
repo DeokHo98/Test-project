@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		FE5DFBF2286D524D002EEF6C /* AutocompleteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5DFBF1286D524D002EEF6C /* AutocompleteTableViewController.swift */; };
 		FE65FFD0286D5B3100EE94EB /* AutocompleteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65FFCF286D5B3100EE94EB /* AutocompleteCell.swift */; };
+		FE65FFD2286D5E7400EE94EB /* AutocompleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65FFD1286D5E7400EE94EB /* AutocompleteModel.swift */; };
+		FE65FFD4286D5EE800EE94EB /* AutocompleteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65FFD3286D5EE800EE94EB /* AutocompleteService.swift */; };
+		FE65FFD6286D5EF100EE94EB /* AutocompleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65FFD5286D5EF100EE94EB /* AutocompleteViewModel.swift */; };
 		FE66BEA4286C25E70085A532 /* MostPopularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE66BEA3286C25E70085A532 /* MostPopularCell.swift */; };
 		FE66BEA6286C2D4B0085A532 /* KeywordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE66BEA5286C2D4B0085A532 /* KeywordModel.swift */; };
 		FE66BEA8286C2E1B0085A532 /* KeywordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE66BEA7286C2E1B0085A532 /* KeywordService.swift */; };
@@ -18,7 +21,7 @@
 		FE66BEB3286C4DFE0085A532 /* ListCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE66BEB2286C4DFE0085A532 /* ListCellHeader.swift */; };
 		FEB16ED3286C5D4C00803EF7 /* GIFModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB16ED2286C5D4C00803EF7 /* GIFModel.swift */; };
 		FEB16ED5286C5D9B00803EF7 /* GIFService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB16ED4286C5D9B00803EF7 /* GIFService.swift */; };
-		FEB16ED7286C5E2200803EF7 /* GIFViewModelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB16ED6286C5E2200803EF7 /* GIFViewModelList.swift */; };
+		FEB16ED7286C5E2200803EF7 /* GIFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB16ED6286C5E2200803EF7 /* GIFViewModel.swift */; };
 		FEB16ED9286C5EA300803EF7 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB16ED8286C5EA300803EF7 /* APIKey.swift */; };
 		FEB16EDD286C7B9B00803EF7 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB16EDC286C7B9B00803EF7 /* ImageLoader.swift */; };
 		FEC44E4A286C07DD00EEAF16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E49286C07DD00EEAF16 /* AppDelegate.swift */; };
@@ -54,6 +57,9 @@
 /* Begin PBXFileReference section */
 		FE5DFBF1286D524D002EEF6C /* AutocompleteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteTableViewController.swift; sourceTree = "<group>"; };
 		FE65FFCF286D5B3100EE94EB /* AutocompleteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteCell.swift; sourceTree = "<group>"; };
+		FE65FFD1286D5E7400EE94EB /* AutocompleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteModel.swift; sourceTree = "<group>"; };
+		FE65FFD3286D5EE800EE94EB /* AutocompleteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteService.swift; sourceTree = "<group>"; };
+		FE65FFD5286D5EF100EE94EB /* AutocompleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteViewModel.swift; sourceTree = "<group>"; };
 		FE66BEA3286C25E70085A532 /* MostPopularCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularCell.swift; sourceTree = "<group>"; };
 		FE66BEA5286C2D4B0085A532 /* KeywordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordModel.swift; sourceTree = "<group>"; };
 		FE66BEA7286C2E1B0085A532 /* KeywordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordService.swift; sourceTree = "<group>"; };
@@ -63,7 +69,7 @@
 		FE66BEB2286C4DFE0085A532 /* ListCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellHeader.swift; sourceTree = "<group>"; };
 		FEB16ED2286C5D4C00803EF7 /* GIFModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFModel.swift; sourceTree = "<group>"; };
 		FEB16ED4286C5D9B00803EF7 /* GIFService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFService.swift; sourceTree = "<group>"; };
-		FEB16ED6286C5E2200803EF7 /* GIFViewModelList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFViewModelList.swift; sourceTree = "<group>"; };
+		FEB16ED6286C5E2200803EF7 /* GIFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFViewModel.swift; sourceTree = "<group>"; };
 		FEB16ED8286C5EA300803EF7 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		FEB16EDC286C7B9B00803EF7 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		FEC44E46286C07DD00EEAF16 /* watcha-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watcha-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,7 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				FE66BEAB286C2FDA0085A532 /* KeywordViewModel.swift */,
-				FEB16ED6286C5E2200803EF7 /* GIFViewModelList.swift */,
+				FEB16ED6286C5E2200803EF7 /* GIFViewModel.swift */,
+				FE65FFD5286D5EF100EE94EB /* AutocompleteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -192,6 +199,7 @@
 			children = (
 				FE66BEA7286C2E1B0085A532 /* KeywordService.swift */,
 				FEB16ED4286C5D9B00803EF7 /* GIFService.swift */,
+				FE65FFD3286D5EE800EE94EB /* AutocompleteService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -201,6 +209,7 @@
 			children = (
 				FE66BEA5286C2D4B0085A532 /* KeywordModel.swift */,
 				FEB16ED2286C5D4C00803EF7 /* GIFModel.swift */,
+				FE65FFD1286D5E7400EE94EB /* AutocompleteModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -378,8 +387,10 @@
 				FEC44E4A286C07DD00EEAF16 /* AppDelegate.swift in Sources */,
 				FE66BEA6286C2D4B0085A532 /* KeywordModel.swift in Sources */,
 				FE66BEA4286C25E70085A532 /* MostPopularCell.swift in Sources */,
+				FE65FFD2286D5E7400EE94EB /* AutocompleteModel.swift in Sources */,
 				FEC44E89286C1D9F00EEAF16 /* KeywordCell.swift in Sources */,
 				FEC44E86286C1B2200EEAF16 /* ListCollectionViewController.swift in Sources */,
+				FE65FFD6286D5EF100EE94EB /* AutocompleteViewModel.swift in Sources */,
 				FE65FFD0286D5B3100EE94EB /* AutocompleteCell.swift in Sources */,
 				FE66BEAC286C2FDA0085A532 /* KeywordViewModel.swift in Sources */,
 				FE66BEB3286C4DFE0085A532 /* ListCellHeader.swift in Sources */,
@@ -387,7 +398,8 @@
 				FEC44E82286C0CB100EEAF16 /* Layout.swift in Sources */,
 				FEB16EDD286C7B9B00803EF7 /* ImageLoader.swift in Sources */,
 				FEC44E4C286C07DD00EEAF16 /* SceneDelegate.swift in Sources */,
-				FEB16ED7286C5E2200803EF7 /* GIFViewModelList.swift in Sources */,
+				FE65FFD4286D5EE800EE94EB /* AutocompleteService.swift in Sources */,
+				FEB16ED7286C5E2200803EF7 /* GIFViewModel.swift in Sources */,
 				FEB16ED9286C5EA300803EF7 /* APIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
