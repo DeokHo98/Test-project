@@ -79,6 +79,11 @@ class SearchResultCollectionViewController: UICollectionViewController {
     
     // MARK: - CollectionViewDelegate
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.cellOffSet.value = indexPath.row
+        let vc = DetailCollectionViewController(viewModel: viewModel)
+        navigationController?.pushViewController(vc, animated: true)
+    }
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.bounds.height - (view.bounds.height / 4) {
             if !viewModel.pagingStart {

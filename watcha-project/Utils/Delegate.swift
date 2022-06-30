@@ -9,4 +9,5 @@ import Foundation
 
 protocol keyWordDelegate: AnyObject {
     func didSelectRowAt(keyword: String)
+    func didSelectRowAt(viewModel: GIFViewModelList)
 }

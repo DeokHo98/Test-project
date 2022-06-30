@@ -134,7 +134,6 @@ extension UICollectionViewCompositionalLayout {
     }
     static func searchResultCollectionViewLayout() -> UICollectionViewCompositionalLayout {
          let layout = UICollectionViewCompositionalLayout { section, env in
-       
                  let itemSize = NSCollectionLayoutSize(
                    widthDimension: .fractionalWidth(1 / 2),
                    heightDimension: .fractionalHeight(1)

@@ -16,6 +16,7 @@ final class GIFViewModelList {
     var fetchState: APIURL = .mostPopular
     var pagingStart: Bool = false
     var offset: Int = 0
+    var cellOffSet: Observer<Int> = Observer(value: 0)
 }
 extension GIFViewModelList {
     var count: Int {
@@ -71,12 +72,20 @@ final class GIFViewModelItem {
         self.model = model
     }
     let model: Datum
-    
     var imageURL: String {
         return model.images.fixedWidthStill.url
     }
-    var height: Int {
-        return Int(model.images.fixedWidthStill.height) ?? 0
+    var userName: String {
+        return model.user?.displayName ?? "Source"
+    }
+    var email: String {
+        return "@\(model.username)"
+    }
+    var userProfileImage: String {
+        return model.user?.avatarURL ?? ""
+    }
+    var id: String {
+        return model.id
     }
 }
 

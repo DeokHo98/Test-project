@@ -38,10 +38,6 @@ struct ImageLoader {
 
 
 extension UIImage {
-    static func animatedGif(named: String, framesPerSecond: Double = 10) -> UIImage? {
-        guard let asset = NSDataAsset(name: named) else { return nil }
-        return animatedGif(from: asset.data, framesPerSecond: framesPerSecond)
-    }
 
     static func animatedGif(from data: Data, framesPerSecond: Double = 10) -> UIImage? {
         guard let source = CGImageSourceCreateWithData(data as CFData, nil) else { return nil }

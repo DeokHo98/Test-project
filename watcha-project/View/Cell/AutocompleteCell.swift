@@ -29,7 +29,6 @@ class AutocompleteCell: UITableViewCell {
     
     private let label: UILabel = {
         let lb = UILabel()
-        lb.text = "12312312312"
         lb.textColor = .white
         lb.font = .boldSystemFont(ofSize: 18)
         return lb

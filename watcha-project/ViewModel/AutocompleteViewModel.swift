@@ -13,7 +13,6 @@ final class AutocompleteViewModelList {
     var serviceError: Observer<ServiceError> = Observer(value: .URLError)
     var fetchSuccess: Observer<Bool> = Observer(value: false)
     var fetchState: APIURL = .autocompleteKeword
-    
 }
 
 extension AutocompleteViewModelList {
@@ -48,11 +47,9 @@ final class AutocompleteViewModelItem {
         self.model = model
     }
     let model: AutocompleteDatum
-    
     var showKeyword: String {
         return self.model.name
     }
-    
     var searchKeyword: String {
         let string = self.model.name.removingWhitespaces()
         return string

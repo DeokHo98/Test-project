@@ -24,6 +24,8 @@
 		FE66BEA8286C2E1B0085A532 /* KeywordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE66BEA7286C2E1B0085A532 /* KeywordService.swift */; };
 		FE66BEAC286C2FDA0085A532 /* KeywordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE66BEAB286C2FDA0085A532 /* KeywordViewModel.swift */; };
 		FE66BEB3286C4DFE0085A532 /* ListCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE66BEB2286C4DFE0085A532 /* ListCellHeader.swift */; };
+		FE78E2EC286D8F2800E91320 /* DetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE78E2EB286D8F2800E91320 /* DetailCollectionViewController.swift */; };
+		FE78E2EE286D95D200E91320 /* DtailCellFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE78E2ED286D95D200E91320 /* DtailCellFooter.swift */; };
 		FEB16ED3286C5D4C00803EF7 /* GIFModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB16ED2286C5D4C00803EF7 /* GIFModel.swift */; };
 		FEB16ED5286C5D9B00803EF7 /* GIFService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB16ED4286C5D9B00803EF7 /* GIFService.swift */; };
 		FEB16ED7286C5E2200803EF7 /* GIFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB16ED6286C5E2200803EF7 /* GIFViewModel.swift */; };
@@ -75,6 +77,8 @@
 		FE66BEA7286C2E1B0085A532 /* KeywordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordService.swift; sourceTree = "<group>"; };
 		FE66BEAB286C2FDA0085A532 /* KeywordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordViewModel.swift; sourceTree = "<group>"; };
 		FE66BEB2286C4DFE0085A532 /* ListCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellHeader.swift; sourceTree = "<group>"; };
+		FE78E2EB286D8F2800E91320 /* DetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewController.swift; sourceTree = "<group>"; };
+		FE78E2ED286D95D200E91320 /* DtailCellFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DtailCellFooter.swift; sourceTree = "<group>"; };
 		FEB16ED2286C5D4C00803EF7 /* GIFModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFModel.swift; sourceTree = "<group>"; };
 		FEB16ED4286C5D9B00803EF7 /* GIFService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFService.swift; sourceTree = "<group>"; };
 		FEB16ED6286C5E2200803EF7 /* GIFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFViewModel.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				FE66BEB2286C4DFE0085A532 /* ListCellHeader.swift */,
+				FE78E2ED286D95D200E91320 /* DtailCellFooter.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				FEC44E85286C1B2200EEAF16 /* ListCollectionViewController.swift */,
 				FE5DFBF1286D524D002EEF6C /* AutocompleteTableViewController.swift */,
 				FE65FFD8286D6A9D00EE94EB /* SearchResultCollectionViewController.swift */,
+				FE78E2EB286D8F2800E91320 /* DetailCollectionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -232,8 +238,8 @@
 		FEC44E7D286C093400EEAF16 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				FE65FFEB286D808100EE94EB /* ImageLoader.swift */,
 				FE65FFEA286D808100EE94EB /* Layout.swift */,
+				FE65FFEB286D808100EE94EB /* ImageLoader.swift */,
 				FE65FFEC286D808100EE94EB /* Observer.swift */,
 				FE65FFE9286D808100EE94EB /* ServiceError.swift */,
 				FE65FFF1286D809100EE94EB /* Delegate.swift */,
@@ -398,9 +404,11 @@
 				FEB16ED3286C5D4C00803EF7 /* GIFModel.swift in Sources */,
 				FE65FFF0286D808100EE94EB /* Observer.swift in Sources */,
 				FE5DFBF2286D524D002EEF6C /* AutocompleteTableViewController.swift in Sources */,
+				FE78E2EE286D95D200E91320 /* DtailCellFooter.swift in Sources */,
 				FE66BEA8286C2E1B0085A532 /* KeywordService.swift in Sources */,
 				FE65FFD9286D6A9D00EE94EB /* SearchResultCollectionViewController.swift in Sources */,
 				FEC44E80286C09D200EEAF16 /* SearchViewController.swift in Sources */,
+				FE78E2EC286D8F2800E91320 /* DetailCollectionViewController.swift in Sources */,
 				FEC44E4A286C07DD00EEAF16 /* AppDelegate.swift in Sources */,
 				FE66BEA6286C2D4B0085A532 /* KeywordModel.swift in Sources */,
 				FE65FFEE286D808100EE94EB /* Layout.swift in Sources */,

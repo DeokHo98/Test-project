@@ -47,7 +47,6 @@ final class TrendingKeyWordViewModelItem {
         self.showKeyword = data
     }
     let showKeyword: String
-    
     var searchKeyword: String {
         return showKeyword.removingWhitespaces()
     }

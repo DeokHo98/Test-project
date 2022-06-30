@@ -115,6 +115,9 @@ class ListCollectionViewController: UICollectionViewController {
         switch indexPath.section {
         case 0:
             delegate?.didSelectRowAt(keyword: trendingViewModel.itemAtIndex(indexPath.row).searchKeyword)
+        case 1:
+            mostPopularViewModel.cellOffSet.value = indexPath.row
+            delegate?.didSelectRowAt(viewModel: mostPopularViewModel)
         default:
             break
         }
