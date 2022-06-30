@@ -44,7 +44,11 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         setLayout()
         setAttribute()
+    }
+    override func viewWillAppear(_ animated: Bool) {
         setNavigation()
+        searchTextField.text = ""
+        offShowAutocompleteTableView()
     }
     
     //MARK: - HelperFunction
@@ -52,6 +56,7 @@ class SearchViewController: UIViewController {
     private func setAttribute() {
         view.backgroundColor = .black
         searchTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
     }
     private func setNavigation() {
         navigationController?.navigationBar.isHidden = true
@@ -96,6 +101,12 @@ class SearchViewController: UIViewController {
         autocompleteTableView.text = searchTextField.text ?? ""
         showAutocompleteTableView()
         offShowAutocompleteTableView()
+    }
+    @objc private func searchButtonTapped() {
+        if searchTextField.text != "" {
+            let controller = SearchResultCollectionViewController()
+            navigationController?.pushViewController(controller, animated: true)
+        }
     }
 }
 
