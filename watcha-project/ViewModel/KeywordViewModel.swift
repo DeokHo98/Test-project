@@ -44,7 +44,11 @@ extension KeywordViewModelList {
 
 final class TrendingKeyWordViewModelItem {
     init(data: String) {
-        self.keyword = data
+        self.showKeyword = data
     }
-    let keyword: String
+    let showKeyword: String
+    
+    var searchKeyword: String {
+        return showKeyword.removingWhitespaces()
+    }
 }

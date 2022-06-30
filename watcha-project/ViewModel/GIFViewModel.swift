@@ -45,7 +45,6 @@ extension GIFViewModelList {
     func nextPageFetch(text: String = "") {
         offset += 20
         service.fetch(url: fetchState.url + text + "&offset=\(offset)") { [weak self] result in
-            print(self!.fetchState.url + "&offset=\(self!.offset)" + text)
             switch result {
             case .success(let model):
                 model.data.forEach {

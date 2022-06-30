@@ -53,7 +53,7 @@ final class AutocompleteViewModelItem {
         return self.model.name
     }
     
-    var keyword: String {
+    var searchKeyword: String {
         let string = self.model.name.removingWhitespaces()
         return string
     }

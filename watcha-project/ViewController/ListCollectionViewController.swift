@@ -12,6 +12,7 @@ class ListCollectionViewController: UICollectionViewController {
     //MARK: - Property
     var trendingViewModel: KeywordViewModelList = KeywordViewModelList()
     var mostPopularViewModel: GIFViewModelList = GIFViewModelList()
+    weak var delegate: keyWordDelegate?
     
     //MARK: - lifeCycle
     
@@ -109,6 +110,15 @@ class ListCollectionViewController: UICollectionViewController {
                 }
             }
         }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            delegate?.didSelectRowAt(keyword: trendingViewModel.itemAtIndex(indexPath.row).searchKeyword)
+        default:
+            break
+        }
+    }
     
 }
 

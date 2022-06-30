@@ -54,7 +54,7 @@ class AutocompleteTableViewController: UITableViewController {
     
     //MARK: -  TableView Delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.didSelectRowAt(keyword: viewModel.itemAtIndex(indexPath.row).keyword)
+        delegate?.didSelectRowAt(keyword: viewModel.itemAtIndex(indexPath.row).searchKeyword)
     }
 
 }

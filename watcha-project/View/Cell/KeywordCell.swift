@@ -57,6 +57,6 @@ class KeywordCell: UICollectionViewCell {
         guard let viewModel = viewModel else {
             return
         }
-        keywordLabel.text = viewModel.keyword
+        keywordLabel.text = viewModel.showKeyword
     }
 }

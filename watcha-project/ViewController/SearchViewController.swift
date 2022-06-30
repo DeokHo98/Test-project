@@ -58,6 +58,7 @@ class SearchViewController: UIViewController {
         searchTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
         autocompleteTableView.delegate = self
+        listCollectionView.delegate = self
     }
     private func setNavigation() {
         navigationController?.navigationBar.isHidden = true
