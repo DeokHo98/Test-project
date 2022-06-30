@@ -42,13 +42,13 @@ class ListCollectionViewController: UICollectionViewController {
     }
     private func setBinding() {
         trendingViewModel.fetchSuccess.bind { [weak self] _ in
-            self?.collectionView.reloadSections(IndexSet(0...0))
+            self?.collectionView.reloadSections(IndexSet(integer: 0))
         }
         trendingViewModel.serviceError.bind { error in
             print("Debug: 인기 키워드 \(error) ")
         }
         mostPopularViewModel.fetchSuccess.bind { [weak self] _ in
-            self?.collectionView.reloadSections(IndexSet(1...1))
+            self?.collectionView.reloadSections(IndexSet(integer: 1))
         }
         mostPopularViewModel.serviceError.bind { error in
             print("Debug: 인기 GIF \(error)")
