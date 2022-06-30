@@ -14,7 +14,7 @@ enum CoreDataError: Error {
     case deleteError
 }
 
-struct FavoriteService {
+struct CoreDataService {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     func uploadCoreData(id: String, completion: @escaping (Result<Void,CoreDataError>) -> Void) {
         let model = Favorite(context: context)

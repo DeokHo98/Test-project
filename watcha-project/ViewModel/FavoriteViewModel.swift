@@ -8,7 +8,7 @@
 import Foundation
 
 final class FavoriteViewModel {
-    var service: FavoriteService = FavoriteService()
+    var service: CoreDataService = CoreDataService()
     var model: [Favorite] = []
     var serviceError: Observer<CoreDataError> = Observer(value: .deleteError)
     var validLikeState: Observer<Bool> = Observer(value: false)
