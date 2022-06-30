@@ -47,13 +47,10 @@ final class GIFViewModelItem {
     }
     let model: Datum
     
-    var gifURL: String {
-        return model.images.fixedWidth.url
+    var imageURL: String {
+        return model.images.fixedWidthStill.url
     }
     var height: Int {
-        guard let height = Int(model.images.fixedWidth.height) else {
-            return 0
-        }
-        return height
+        return Int(model.images.fixedWidthStill.height) ?? 0
     }
 }

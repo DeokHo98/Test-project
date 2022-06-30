@@ -38,15 +38,13 @@ class MostPopularCell: UICollectionViewCell {
     //MARK: - HelperFunction
     
     private func setLayout() {
-        self.contentView.addSubview(imageView)
+        self.addSubview(imageView)
         imageView.anchor(top: self.topAnchor, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor)
     }
     private func setViewModel() {
         guard let viewModel = viewModel else {return}
-        ImageLoader.fetchImage(url: viewModel.gifURL) { [weak self] image in
-            guard let image = image else {return}
+        ImageLoader.fetchImage(url: viewModel.imageURL) { [weak self] image in
             self?.imageView.image = image
         }
-        
     }
 }

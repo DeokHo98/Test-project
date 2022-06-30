@@ -27,7 +27,7 @@
 		FEC44E6B286C07DE00EEAF16 /* watcha_projectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E6A286C07DE00EEAF16 /* watcha_projectUITests.swift */; };
 		FEC44E6D286C07DE00EEAF16 /* watcha_projectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E6C286C07DE00EEAF16 /* watcha_projectUITestsLaunchTests.swift */; };
 		FEC44E80286C09D200EEAF16 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E7F286C09D200EEAF16 /* SearchViewController.swift */; };
-		FEC44E82286C0CB100EEAF16 /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E81286C0CB100EEAF16 /* AutoLayout.swift */; };
+		FEC44E82286C0CB100EEAF16 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E81286C0CB100EEAF16 /* Layout.swift */; };
 		FEC44E86286C1B2200EEAF16 /* ListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E85286C1B2200EEAF16 /* ListCollectionViewController.swift */; };
 		FEC44E89286C1D9F00EEAF16 /* TrendingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E88286C1D9F00EEAF16 /* TrendingCell.swift */; };
 /* End PBXBuildFile section */
@@ -74,7 +74,7 @@
 		FEC44E6A286C07DE00EEAF16 /* watcha_projectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = watcha_projectUITests.swift; sourceTree = "<group>"; };
 		FEC44E6C286C07DE00EEAF16 /* watcha_projectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = watcha_projectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FEC44E7F286C09D200EEAF16 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		FEC44E81286C0CB100EEAF16 /* AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
+		FEC44E81286C0CB100EEAF16 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		FEC44E85286C1B2200EEAF16 /* ListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewController.swift; sourceTree = "<group>"; };
 		FEC44E88286C1D9F00EEAF16 /* TrendingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,7 +203,7 @@
 		FEC44E7D286C093400EEAF16 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				FEC44E81286C0CB100EEAF16 /* AutoLayout.swift */,
+				FEC44E81286C0CB100EEAF16 /* Layout.swift */,
 				FE66BEAD286C3A7B0085A532 /* Observer.swift */,
 				FE66BEAF286C49A90085A532 /* ServiceError.swift */,
 				FEB16EDC286C7B9B00803EF7 /* ImageLoader.swift */,
@@ -376,7 +376,7 @@
 				FE66BEAC286C2FDA0085A532 /* TrendingKeyWordViewModelList.swift in Sources */,
 				FE66BEB3286C4DFE0085A532 /* ListCellHeader.swift in Sources */,
 				FEB16ED5286C5D9B00803EF7 /* GIFService.swift in Sources */,
-				FEC44E82286C0CB100EEAF16 /* AutoLayout.swift in Sources */,
+				FEC44E82286C0CB100EEAF16 /* Layout.swift in Sources */,
 				FEB16EDD286C7B9B00803EF7 /* ImageLoader.swift in Sources */,
 				FEC44E4C286C07DD00EEAF16 /* SceneDelegate.swift in Sources */,
 				FEB16ED7286C5E2200803EF7 /* GIFViewModelList.swift in Sources */,

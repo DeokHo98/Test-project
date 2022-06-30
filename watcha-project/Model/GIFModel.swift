@@ -36,35 +36,18 @@ struct Datum: Decodable {
 // MARK: - Images
 
 struct Images: Decodable {
-    let fixedWidth: FixedHeight
-
-
+    let fixedWidthStill: The480_WStill
     enum CodingKeys: String, CodingKey {
-        case fixedWidth = "fixed_width"
+        case fixedWidthStill = "fixed_width_still"
     }
 }
 
+// MARK: - The480_WStill
 
-// MARK: - FixedHeight
-
-struct FixedHeight: Decodable {
+struct The480_WStill: Codable {
     let height, width, size: String
     let url: String
-    let mp4Size: String?
-    let mp4: String?
-    let webpSize: String
-    let webp: String
-    let frames, hash: String?
-
-    enum CodingKeys: String, CodingKey {
-        case height, width, size, url
-        case mp4Size = "mp4_size"
-        case mp4
-        case webpSize = "webp_size"
-        case webp, frames, hash
-    }
 }
-
 
 // MARK: - User
 

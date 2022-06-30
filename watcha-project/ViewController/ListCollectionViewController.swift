@@ -16,60 +16,7 @@ class ListCollectionViewController: UICollectionViewController {
     //MARK: - lifeCycle
     
     init() {
-        let layout = UICollectionViewCompositionalLayout { section, env in
-            switch section {
-            case 0:
-                let item = NSCollectionLayoutItem(
-                    layoutSize: .init(widthDimension: .fractionalWidth(1),
-                       heightDimension: .fractionalHeight(1))
-                )
-                let group = NSCollectionLayoutGroup.vertical(
-                   layoutSize: .init(widthDimension: .fractionalWidth(1),
-                                     heightDimension: .estimated(45)),
-                   subitems: [item]
-                )
-                group.contentInsets.top = 10
-                let section = NSCollectionLayoutSection(group: group)
-                section.orthogonalScrollingBehavior = .none
-                section.boundarySupplementaryItems = [
-                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1),
-                                            heightDimension: .estimated(50)),
-                          elementKind: UICollectionView.elementKindSectionHeader,
-                          alignment: .topLeading)
-                ]
-                section.contentInsets = .init(top: -10, leading: 0, bottom: 10, trailing: 0)
-                return section
-            case 1:
-                let item = NSCollectionLayoutItem(
-                    layoutSize: .init(widthDimension: .fractionalWidth(1),
-                       heightDimension: .fractionalHeight(1))
-                )
-                item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
-                let group = NSCollectionLayoutGroup.horizontal(
-                   layoutSize: .init(widthDimension: .fractionalWidth(1),
-                                     heightDimension: .fractionalWidth(1/3)),
-                   subitem: item, count: 2
-                )
-                let section = NSCollectionLayoutSection(group: group)
-                section.orthogonalScrollingBehavior = .none
-                section.boundarySupplementaryItems = [
-                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1),
-                                            heightDimension: .estimated(50)),
-                          elementKind: UICollectionView.elementKindSectionHeader,
-                          alignment: .topLeading)
-                ]
-                return section
-            default:
-                return NSCollectionLayoutSection(
-                   group: NSCollectionLayoutGroup(
-                       layoutSize: NSCollectionLayoutSize(
-                           widthDimension: .absolute(0), heightDimension: .absolute(0)
-                       )
-                   )
-                )
-            }
-        }
-        super.init(collectionViewLayout: layout)
+        super.init(collectionViewLayout: UICollectionViewCompositionalLayout.setCompositionalLayout())
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -83,8 +30,6 @@ class ListCollectionViewController: UICollectionViewController {
         mostPopularViewModel.fetchMostPopular()
     }
     
-    
-    
     //MARK: - HelperFunction
     func setAttribute() {
         collectionView.backgroundColor = .black
@@ -96,19 +41,20 @@ class ListCollectionViewController: UICollectionViewController {
     }
     func setBinding() {
         trendingViewModel.fetchSuccess.bind { [weak self] _ in
-            self?.collectionView.reloadData()
+            self?.collectionView.reloadSections(IndexSet(0...0))
         }
         trendingViewModel.serviceError.bind { error in
             print("Debug: 인기 키워드 \(error) ")
         }
         mostPopularViewModel.fetchSuccess.bind { [weak self] _ in
-            self?.collectionView.reloadData()
+            self?.collectionView.reloadSections(IndexSet(1...1))
         }
         mostPopularViewModel.serviceError.bind { error in
             print("Debug: 인기 GIF \(error)")
         }
     }
 
+    
     //MARK: - DatSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -152,6 +98,5 @@ class ListCollectionViewController: UICollectionViewController {
             return UICollectionReusableView()
         }
     }
-    
 }
 
