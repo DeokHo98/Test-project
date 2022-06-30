@@ -57,6 +57,7 @@ class SearchViewController: UIViewController {
         searchTextField.delegate = self
         searchTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
+        autocompleteTableView.delegate = self
     }
     private func setNavigation() {
         navigationController?.navigationBar.isHidden = true
@@ -110,11 +111,27 @@ class SearchViewController: UIViewController {
             navigationController?.pushViewController(controller, animated: true)
         }
     }
+    private func keywordSearch(keyword: String) {
+        let controller = SearchResultCollectionViewController()
+        controller.viewModel.fetchState = .search
+        controller.text = keyword
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }
+
+//MARK: - textFieldDelegate
 
 extension SearchViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchButtonTapped()
         return true
+    }
+}
+
+//MARK: - keywordDelegate
+
+extension SearchViewController: keyWordDelegate {
+    func didSelectRowAt(keyword: String) {
+        keywordSearch(keyword: keyword)
     }
 }

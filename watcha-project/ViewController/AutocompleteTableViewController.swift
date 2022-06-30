@@ -15,6 +15,7 @@ class AutocompleteTableViewController: UITableViewController {
             viewModel.fetchAutoCompleteKeyword(text: text ?? "")
         }
     }
+    weak var delegate: keyWordDelegate?
     private var viewModel: AutocompleteViewModelList = AutocompleteViewModelList()
     
     //MARK: - lifeCycle
@@ -49,6 +50,11 @@ class AutocompleteTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: AutocompleteCell.identifier, for: indexPath) as! AutocompleteCell
         cell.viewModel = viewModel.itemAtIndex(indexPath.row)
         return cell
+    }
+    
+    //MARK: -  TableView Delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.didSelectRowAt(keyword: viewModel.itemAtIndex(indexPath.row).keyword)
     }
 
 }
