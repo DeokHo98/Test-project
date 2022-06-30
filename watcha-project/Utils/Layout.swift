@@ -71,7 +71,7 @@ extension UIView {
 }
 
 extension UICollectionViewCompositionalLayout {
-   static func setCompositionalLayout() -> UICollectionViewCompositionalLayout {
+   static func ListCollectionViewLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { section, env in
             switch section {
             case 0:
@@ -132,4 +132,30 @@ extension UICollectionViewCompositionalLayout {
         }
         return layout
     }
+    static func searchResultCollectionViewLayout() -> UICollectionViewCompositionalLayout {
+         let layout = UICollectionViewCompositionalLayout { section, env in
+       
+                 let itemSize = NSCollectionLayoutSize(
+                   widthDimension: .fractionalWidth(1 / 2),
+                   heightDimension: .fractionalHeight(1)
+                 )
+                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                 item.contentInsets = NSDirectionalEdgeInsets(top: 3, leading: 3, bottom: 3, trailing: 3)
+                 let groupSize = NSCollectionLayoutSize(
+                   widthDimension: .fractionalWidth(1),
+                   heightDimension: .fractionalHeight(1 / 4)
+                 )
+                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+                 let section = NSCollectionLayoutSection(group: group)
+                 section.orthogonalScrollingBehavior = .none
+                 section.boundarySupplementaryItems = [
+                     .init(layoutSize: .init(widthDimension: .fractionalWidth(1),
+                                             heightDimension: .estimated(50)),
+                           elementKind: UICollectionView.elementKindSectionHeader,
+                           alignment: .topLeading)
+                 ]
+                 return section
+             }
+         return layout
+     }
 }
