@@ -55,6 +55,7 @@ class SearchViewController: UIViewController {
      
     private func setAttribute() {
         view.backgroundColor = .black
+        searchTextField.delegate = self
         searchTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
     }
@@ -110,3 +111,9 @@ class SearchViewController: UIViewController {
     }
 }
 
+extension SearchViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchButtonTapped()
+        return true
+    }
+}
