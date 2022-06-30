@@ -69,7 +69,11 @@ class DetailCollectionViewController: UICollectionViewController {
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.tintColor = .systemBlue
         navigationController?.navigationBar.topItem?.title = ""
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationItem.title = "GIF"
+        navigationController?.navigationBar.backgroundColor = .black
+        navigationController?.navigationBar.barTintColor = .black
+        navigationController?.navigationBar.isTranslucent = false
     }
     private func setCell() {
         collectionView.register(GIFCell.self, forCellWithReuseIdentifier: GIFCell.identifier)
