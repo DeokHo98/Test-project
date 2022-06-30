@@ -7,11 +7,25 @@
 
 import Foundation
 
+enum GIFFetchState {
+    var url: String {
+        switch self {
+        case .mostPopular:
+            return "https://api.giphy.com/v1/gifs/trending?\(APIKey.key)&limit=20&rating=g"
+        }
+    }
+    
+    case mostPopular
+}
+
 final class GIFViewModelList {
     private let service = GIFService()
     var items: [GIFViewModelItem] = []
     var serviceError: Observer<ServiceError> = Observer(value: .URLError)
     var fetchSuccess: Observer<Bool> = Observer(value: true)
+    var fetchState: GIFFetchState = .mostPopular
+    var pagingStart: Bool = false
+    var offset: Int = 0
 }
 extension GIFViewModelList {
     var count: Int {
@@ -21,8 +35,7 @@ extension GIFViewModelList {
         return items[index]
     }
     func fetchMostPopular() {
-        let url = "https://api.giphy.com/v1/gifs/trending?\(APIKey.key)&limit=20&rating=g"
-        service.fetch(url: url) { [weak self] result in
+        service.fetch(url: fetchState.url) { [weak self] result in
             switch result {
             case .success(let model):
                 let items = model.data.map {
@@ -30,6 +43,26 @@ extension GIFViewModelList {
                 }
                 self?.items = items
                 DispatchQueue.main.async {
+                    self?.fetchSuccess.value = true
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.serviceError.value = error
+                }
+            }
+        }
+    }
+    func nextPageFetch() {
+        offset += 20
+        service.fetch(url: fetchState.url + "&offset=\(offset)" ) { [weak self] result in
+            switch result {
+            case .success(let model):
+                model.data.forEach {
+                    let item = GIFViewModelItem.init(model: $0)
+                    self?.items.append(item)
+                }
+                DispatchQueue.main.async {
+                    self?.pagingStart = false
                     self?.fetchSuccess.value = true
                 }
             case .failure(let error):
