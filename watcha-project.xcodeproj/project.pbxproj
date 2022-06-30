@@ -114,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE65FFD7286D6A0900EE94EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE66BEB1286C4DEB0085A532 /* Header */,
+				FEC44E87286C1CB100EEAF16 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FE66BEB1286C4DEB0085A532 /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +160,7 @@
 				FEC44E7B286C091E00EEAF16 /* Service */,
 				FEC44E7A286C090A00EEAF16 /* ViewModel */,
 				FEC44E79286C08FD00EEAF16 /* ViewController */,
+				FE65FFD7286D6A0900EE94EB /* View */,
 			);
 			path = "watcha-project";
 			sourceTree = "<group>";
@@ -175,8 +185,6 @@
 		FEC44E79286C08FD00EEAF16 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				FE66BEB1286C4DEB0085A532 /* Header */,
-				FEC44E87286C1CB100EEAF16 /* Cell */,
 				FEC44E7F286C09D200EEAF16 /* SearchViewController.swift */,
 				FEC44E85286C1B2200EEAF16 /* ListCollectionViewController.swift */,
 				FE5DFBF1286D524D002EEF6C /* AutocompleteTableViewController.swift */,
