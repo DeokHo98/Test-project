@@ -10,7 +10,7 @@ import Foundation
 final class FavoriteViewModel {
     var service: FavoriteService = FavoriteService()
     var model: [Favorite] = []
-    var serviceError: Observer<FavoriteError> = Observer(value: .deleteError)
+    var serviceError: Observer<CoreDataError> = Observer(value: .deleteError)
     var validLikeState: Observer<Bool> = Observer(value: false)
     var fetchSuccess: Observer<Bool> = Observer(value: false)
     var id: [String] {
@@ -65,7 +65,5 @@ extension FavoriteViewModel {
                 }
             }
         }
-
-        
     }
 }

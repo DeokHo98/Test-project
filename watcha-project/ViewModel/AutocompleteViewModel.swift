@@ -8,7 +8,6 @@
 import Foundation
 
 final class AutocompleteViewModelList {
-    let service: AutocompleteSerivce = AutocompleteSerivce()
     var items: [AutocompleteViewModelItem] = []
     var serviceError: Observer<ServiceError> = Observer(value: .URLError)
     var fetchSuccess: Observer<Bool> = Observer(value: false)
@@ -23,7 +22,8 @@ extension AutocompleteViewModelList {
         return items[index]
     }
     func fetchAutoCompleteKeyword(text: String) {
-        service.fetch(url: fetchState.url + "&q=\(text)") { [weak self] result in
+        let resource = Resource<AutocompleteModel>(url: fetchState.url + "&q=\(text)")
+        Service.fetch(resource: resource) { [weak self] result in
             switch result {
             case .success(let model):
                 let items = model.data.map {

@@ -8,7 +8,7 @@
 import CoreData
 import UIKit
 
-enum FavoriteError: Error {
+enum CoreDataError: Error {
     case uploadError
     case fetchError
     case deleteError
@@ -16,7 +16,7 @@ enum FavoriteError: Error {
 
 struct FavoriteService {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    func uploadCoreData(id: String, completion: @escaping (Result<Void,FavoriteError>) -> Void) {
+    func uploadCoreData(id: String, completion: @escaping (Result<Void,CoreDataError>) -> Void) {
         let model = Favorite(context: context)
         model.id = id
         do {
@@ -26,7 +26,7 @@ struct FavoriteService {
             completion(.failure(.uploadError))
         }
     }
-    func fetchCoreData(completion: @escaping (Result<[Favorite],FavoriteError>) -> Void) {
+    func fetchCoreData(completion: @escaping (Result<[Favorite],CoreDataError>) -> Void) {
         let request: NSFetchRequest<Favorite> = Favorite.fetchRequest()
         do {
             let model = try context.fetch(request)
@@ -35,13 +35,12 @@ struct FavoriteService {
             completion(.failure(.fetchError))
         }
     }
-    func deleteCoreData(model: Favorite, completion: @escaping (Result<Void, FavoriteError>) -> Void) {
+    func deleteCoreData(model: Favorite, completion: @escaping (Result<Void, CoreDataError>) -> Void) {
         context.delete(model)
         do {
             try context.save()
             completion(.success(()))
         } catch {
-            print("디버그")
             completion(.failure(.deleteError))
         }
     }
