@@ -34,6 +34,8 @@ class SearchViewController: UIViewController {
         }
         return bt
     }()
+    private let autocompleteTableView: UITableViewController = AutocompleteTableViewController()
+    private var showAutocompleteTableViewState: Bool = false
     private let listCollectionView: UICollectionViewController = ListCollectionViewController()
     
     //MARK: - LifeCycle
@@ -49,6 +51,7 @@ class SearchViewController: UIViewController {
      
     private func setAttribute() {
         view.backgroundColor = .black
+        searchTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     private func setNavigation() {
         navigationController?.navigationBar.isHidden = true
@@ -76,4 +79,22 @@ class SearchViewController: UIViewController {
             trailing: view.trailingAnchor
         )
     }
+    private func showAutocompleteTableView() {
+        if !showAutocompleteTableViewState {
+            view.addSubview(autocompleteTableView.view)
+            autocompleteTableView.view.anchor(top: searchTextField.bottomAnchor, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor)
+            showAutocompleteTableViewState = true
+        }
+    }
+    private func offShowAutocompleteTableView() {
+        if searchTextField.text == "" {
+            autocompleteTableView.view.removeFromSuperview()
+            showAutocompleteTableViewState = false
+        }
+    }
+    @objc private func textFieldDidChange() {
+        showAutocompleteTableView()
+        offShowAutocompleteTableView()
+    }
 }
+
