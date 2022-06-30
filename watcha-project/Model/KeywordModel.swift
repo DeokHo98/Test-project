@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - TrendingModel
+// MARK: - KeywordModel
 struct KeywordModel: Decodable {
     var data: [String]
 }
