@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TrendingCell: UICollectionViewCell {
+class KeywordCell: UICollectionViewCell {
     
     //MARK: - Identifier
     
@@ -29,7 +29,6 @@ class TrendingCell: UICollectionViewCell {
         let lb = UILabel()
         lb.font = .boldSystemFont(ofSize: 20)
         lb.textColor = .white
-        lb.text = "reoobtasd"
         return lb
     }()
     

@@ -35,7 +35,7 @@ class ListCollectionViewController: UICollectionViewController {
         collectionView.backgroundColor = .black
     }
     private func setCell() {
-        collectionView.register(TrendingCell.self, forCellWithReuseIdentifier: TrendingCell.identifier)
+        collectionView.register(KeywordCell.self, forCellWithReuseIdentifier: KeywordCell.identifier)
         collectionView.register(MostPopularCell.self, forCellWithReuseIdentifier: MostPopularCell.identifier)
         collectionView.register(ListCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ListCellHeader.identifier)
     }
@@ -70,7 +70,7 @@ class ListCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCell.identifier, for: indexPath) as! TrendingCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KeywordCell.identifier, for: indexPath) as! KeywordCell
             cell.viewModel = trendingViewModel.itemAtIndex(indexPath.row)
             return cell
         case 1:

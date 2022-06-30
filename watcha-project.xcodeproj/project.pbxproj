@@ -30,7 +30,7 @@
 		FEC44E80286C09D200EEAF16 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E7F286C09D200EEAF16 /* SearchViewController.swift */; };
 		FEC44E82286C0CB100EEAF16 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E81286C0CB100EEAF16 /* Layout.swift */; };
 		FEC44E86286C1B2200EEAF16 /* ListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E85286C1B2200EEAF16 /* ListCollectionViewController.swift */; };
-		FEC44E89286C1D9F00EEAF16 /* TrendingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E88286C1D9F00EEAF16 /* TrendingCell.swift */; };
+		FEC44E89286C1D9F00EEAF16 /* KeywordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E88286C1D9F00EEAF16 /* KeywordCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +78,7 @@
 		FEC44E7F286C09D200EEAF16 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FEC44E81286C0CB100EEAF16 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		FEC44E85286C1B2200EEAF16 /* ListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewController.swift; sourceTree = "<group>"; };
-		FEC44E88286C1D9F00EEAF16 /* TrendingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCell.swift; sourceTree = "<group>"; };
+		FEC44E88286C1D9F00EEAF16 /* KeywordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,7 +230,7 @@
 		FEC44E87286C1CB100EEAF16 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				FEC44E88286C1D9F00EEAF16 /* TrendingCell.swift */,
+				FEC44E88286C1D9F00EEAF16 /* KeywordCell.swift */,
 				FE66BEA3286C25E70085A532 /* MostPopularCell.swift */,
 			);
 			path = Cell;
@@ -375,7 +375,7 @@
 				FEC44E4A286C07DD00EEAF16 /* AppDelegate.swift in Sources */,
 				FE66BEA6286C2D4B0085A532 /* KeywordModel.swift in Sources */,
 				FE66BEA4286C25E70085A532 /* MostPopularCell.swift in Sources */,
-				FEC44E89286C1D9F00EEAF16 /* TrendingCell.swift in Sources */,
+				FEC44E89286C1D9F00EEAF16 /* KeywordCell.swift in Sources */,
 				FEC44E86286C1B2200EEAF16 /* ListCollectionViewController.swift in Sources */,
 				FE66BEAC286C2FDA0085A532 /* KeywordViewModel.swift in Sources */,
 				FE66BEB3286C4DFE0085A532 /* ListCellHeader.swift in Sources */,
