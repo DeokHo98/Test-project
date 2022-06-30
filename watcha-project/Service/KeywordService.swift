@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct TrendingKeyWordService {
-    func fetch(url: String, completion: @escaping (Result<TrendingKeyWordModel,ServiceError>) -> Void) {
+struct KeywordService {
+    func fetch(url: String, completion: @escaping (Result<KeywordModel,ServiceError>) -> Void) {
         guard let url = URL(string: url) else {
             completion(.failure(.URLError))
             return
@@ -26,7 +26,7 @@ struct TrendingKeyWordService {
                 return
             }
             do {
-                let result = try JSONDecoder().decode(TrendingKeyWordModel.self, from: data)
+                let result = try JSONDecoder().decode(KeywordModel.self, from: data)
                     completion(.success(result))
             } catch {
                 completion(.failure(.jsonDecodeError))

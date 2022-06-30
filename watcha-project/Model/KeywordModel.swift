@@ -8,10 +8,10 @@
 import Foundation
 
 // MARK: - TrendingModel
-struct TrendingKeyWordModel: Decodable {
+struct KeywordModel: Decodable {
     var data: [String]
 }
 
-extension TrendingKeyWordModel {
-    static let EMPTY = TrendingKeyWordModel(data: [])
+extension KeywordModel {
+    static let EMPTY = KeywordModel(data: [])
 }

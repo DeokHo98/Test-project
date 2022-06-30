@@ -10,7 +10,7 @@ import UIKit
 class ListCollectionViewController: UICollectionViewController {
 
     //MARK: - Property
-    var trendingViewModel: TrendingKeyWordViewModelList = TrendingKeyWordViewModelList()
+    var trendingViewModel: KeywordViewModel = KeywordViewModel()
     var mostPopularViewModel: GIFViewModelList = GIFViewModelList()
     
     //MARK: - lifeCycle
@@ -31,15 +31,15 @@ class ListCollectionViewController: UICollectionViewController {
     }
     
     //MARK: - HelperFunction
-    func setAttribute() {
+   private func setAttribute() {
         collectionView.backgroundColor = .black
     }
-    func setCell() {
+    private func setCell() {
         collectionView.register(TrendingCell.self, forCellWithReuseIdentifier: TrendingCell.identifier)
         collectionView.register(MostPopularCell.self, forCellWithReuseIdentifier: MostPopularCell.identifier)
         collectionView.register(ListCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ListCellHeader.identifier)
     }
-    func setBinding() {
+    private func setBinding() {
         trendingViewModel.fetchSuccess.bind { [weak self] _ in
             self?.collectionView.reloadSections(IndexSet(0...0))
         }

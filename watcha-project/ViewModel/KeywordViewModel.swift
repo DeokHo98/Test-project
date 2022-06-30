@@ -7,14 +7,14 @@
 
 import Foundation
 
-final class TrendingKeyWordViewModelList {
-    private let service = TrendingKeyWordService()
+final class KeywordViewModel {
+    private let service = KeywordService()
     private var items: [TrendingKeyWordViewModelItem] = []
     var serviceError: Observer<ServiceError> = Observer(value: .URLError)
     var fetchSuccess: Observer<Bool> = Observer(value: false)
 }
 
-extension TrendingKeyWordViewModelList {
+extension KeywordViewModel {
     var count: Int {
         return items.count
     }
