@@ -63,7 +63,7 @@ class AutocompleteCell: UITableViewCell {
         self.selectionStyle = .none
     }
     private func setViewModel() {
-        self.label.text = viewModel?.keyword
+        self.label.text = viewModel?.showKeyword
     }
     
     

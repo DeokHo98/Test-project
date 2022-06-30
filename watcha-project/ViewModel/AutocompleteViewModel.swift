@@ -49,7 +49,12 @@ final class AutocompleteViewModelItem {
     }
     let model: AutocompleteDatum
     
-    var keyword: String {
+    var showKeyword: String {
         return self.model.name
+    }
+    
+    var keyword: String {
+        let string = self.model.name.removingWhitespaces()
+        return string
     }
 }
