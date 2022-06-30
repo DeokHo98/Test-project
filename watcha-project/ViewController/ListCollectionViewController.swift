@@ -16,7 +16,7 @@ class ListCollectionViewController: UICollectionViewController {
     //MARK: - lifeCycle
     
     init() {
-        super.init(collectionViewLayout: UICollectionViewCompositionalLayout.setCompositionalLayout())
+        super.init(collectionViewLayout: UICollectionViewCompositionalLayout.ListCollectionViewLayout())
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
