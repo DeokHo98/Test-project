@@ -36,7 +36,7 @@ class ListCollectionViewController: UICollectionViewController {
     }
     private func setCell() {
         collectionView.register(KeywordCell.self, forCellWithReuseIdentifier: KeywordCell.identifier)
-        collectionView.register(MostPopularCell.self, forCellWithReuseIdentifier: MostPopularCell.identifier)
+        collectionView.register(GIFCell.self, forCellWithReuseIdentifier: GIFCell.identifier)
         collectionView.register(ListCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ListCellHeader.identifier)
     }
     private func setBinding() {
@@ -74,7 +74,7 @@ class ListCollectionViewController: UICollectionViewController {
             cell.viewModel = trendingViewModel.itemAtIndex(indexPath.row)
             return cell
         case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MostPopularCell.identifier, for: indexPath) as! MostPopularCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GIFCell.identifier, for: indexPath) as! GIFCell
             cell.viewModel = mostPopularViewModel.itemAtIndex(indexPath.row)
             return cell
         default:
