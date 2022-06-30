@@ -14,6 +14,12 @@ class AutocompleteCell: UITableViewCell {
     
     //MARK: - Property
     
+    var viewModel: AutocompleteViewModelItem? {
+        didSet {
+            setViewModel()
+        }
+    }
+    
     private let autoimageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "magnifyingglass")
@@ -55,6 +61,9 @@ class AutocompleteCell: UITableViewCell {
     private func setAttribute() {
         self.backgroundColor = .clear
         self.selectionStyle = .none
+    }
+    private func setViewModel() {
+        self.label.text = viewModel?.keyword
     }
     
     

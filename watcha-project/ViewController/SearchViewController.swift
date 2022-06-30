@@ -34,9 +34,9 @@ class SearchViewController: UIViewController {
         }
         return bt
     }()
-    private let autocompleteTableView: UITableViewController = AutocompleteTableViewController()
+    private let autocompleteTableView = AutocompleteTableViewController()
     private var showAutocompleteTableViewState: Bool = false
-    private let listCollectionView: UICollectionViewController = ListCollectionViewController()
+    private let listCollectionView = ListCollectionViewController()
     
     //MARK: - LifeCycle
     
@@ -93,6 +93,7 @@ class SearchViewController: UIViewController {
         }
     }
     @objc private func textFieldDidChange() {
+        autocompleteTableView.text = searchTextField.text ?? ""
         showAutocompleteTableView()
         offShowAutocompleteTableView()
     }
