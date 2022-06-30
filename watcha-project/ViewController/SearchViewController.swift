@@ -10,7 +10,6 @@ import UIKit
 class SearchViewController: UIViewController {
     
     //MARK: - Property
-    
     private let searchTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = " Search GIPHY"
@@ -106,6 +105,8 @@ class SearchViewController: UIViewController {
     @objc private func searchButtonTapped() {
         if searchTextField.text != "" {
             let controller = SearchResultCollectionViewController()
+            controller.viewModel.fetchState = .search
+            controller.text = searchTextField.text
             navigationController?.pushViewController(controller, animated: true)
         }
     }

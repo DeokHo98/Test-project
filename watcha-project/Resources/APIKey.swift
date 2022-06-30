@@ -20,9 +20,12 @@ enum APIURL {
             return "https://api.giphy.com/v1/trending/searches?\(APIKey.key)"
         case .autocompleteKeword:
             return "https://api.giphy.com/v1/gifs/search/tags?\(APIKey.key)&limit=10"
+        case .search:
+            return "https://api.giphy.com/v1/gifs/search?\(APIKey.key)&limit=20&rating=g&q="
         }
     }
     case mostPopular
     case trendKeyword
     case autocompleteKeword
+    case search
 }

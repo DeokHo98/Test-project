@@ -10,6 +10,12 @@ import UIKit
 class SearchResultCollectionViewController: UICollectionViewController {
 
     //MARK: - Property
+    var text: String? {
+        didSet {
+            viewModel.fetchMostGIF(text: text ?? "")
+        }
+    }
+     let viewModel: GIFViewModelList = GIFViewModelList()
     
     //MARK: - lifeCycle
     
@@ -39,20 +45,26 @@ class SearchResultCollectionViewController: UICollectionViewController {
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.tintColor = .systemBlue
         navigationController?.navigationBar.topItem?.title = ""
+        navigationController?.navigationBar.backgroundColor = .black
     }
     private func setBinding() {
-     
+        viewModel.fetchSuccess.bind { [weak self] _ in
+            self?.collectionView.reloadSections(IndexSet(0...0))
+        }
+        viewModel.serviceError.bind { error in
+            print("Debug: 검색 GIF \(error)")
+        }
     }
 
     
     //MARK: - CollectionViewxDatSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       return 100
+        return viewModel.count
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GIFCell.identifier, for: indexPath) as! GIFCell
-        cell.backgroundColor = .red
+        cell.viewModel = viewModel.itemAtIndex(indexPath.row)
         return cell
     }
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -68,7 +80,11 @@ class SearchResultCollectionViewController: UICollectionViewController {
     // MARK: - CollectionViewDelegate
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.bounds.height - 300 {
+        if scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.bounds.height - (view.bounds.height / 4) {
+            if !viewModel.pagingStart {
+                viewModel.pagingStart = true
+                viewModel.nextPageFetch(text: text ?? "")
+            }
         }
     }
 }

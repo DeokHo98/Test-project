@@ -24,8 +24,8 @@ extension GIFViewModelList {
     func itemAtIndex(_ index: Int) -> GIFViewModelItem {
         return items[index]
     }
-    func fetchMostPopular() {
-        service.fetch(url: fetchState.url) { [weak self] result in
+    func fetchMostGIF(text: String = "") {
+        service.fetch(url: fetchState.url + text) { [weak self] result in
             switch result {
             case .success(let model):
                 let items = model.data.map {
@@ -42,9 +42,10 @@ extension GIFViewModelList {
             }
         }
     }
-    func nextPageFetch() {
+    func nextPageFetch(text: String = "") {
         offset += 20
-        service.fetch(url: fetchState.url + "&offset=\(offset)" ) { [weak self] result in
+        service.fetch(url: fetchState.url + text + "&offset=\(offset)") { [weak self] result in
+            print(self!.fetchState.url + "&offset=\(self!.offset)" + text)
             switch result {
             case .success(let model):
                 model.data.forEach {
@@ -58,6 +59,8 @@ extension GIFViewModelList {
             case .failure(let error):
                 DispatchQueue.main.async {
                     self?.serviceError.value = error
+                    self?.pagingStart = false
+                    self?.offset -= 20
                 }
             }
         }
@@ -82,4 +85,4 @@ final class GIFViewModelItem {
 
 
 
-//https://api.giphy.com/v1/gifs/search/tags?api_key=MjCPlYY5U7JKYjuCuWac3SSmrropRpI1&q="GOOD"&limit=10
+

@@ -27,7 +27,7 @@ class ListCollectionViewController: UICollectionViewController {
         setAttribute()
         setCell()
         trendingViewModel.fetchTrandingKeword()
-        mostPopularViewModel.fetchMostPopular()
+        mostPopularViewModel.fetchMostGIF()
     }
     
     //MARK: - HelperFunction
@@ -102,7 +102,7 @@ class ListCollectionViewController: UICollectionViewController {
     // MARK: - CollectionViewDelegate
 
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            if scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.bounds.height - 300 {
+        if scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.bounds.height - (view.bounds.height / 4) {
                 if !mostPopularViewModel.pagingStart {
                     mostPopularViewModel.pagingStart = true
                     mostPopularViewModel.nextPageFetch()
