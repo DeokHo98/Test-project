@@ -27,6 +27,7 @@
 		FE78E2EC286D8F2800E91320 /* DetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE78E2EB286D8F2800E91320 /* DetailCollectionViewController.swift */; };
 		FE78E2EE286D95D200E91320 /* DtailCellFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE78E2ED286D95D200E91320 /* DtailCellFooter.swift */; };
 		FE78E2F1286DE05A00E91320 /* FavoriteModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE78E2EF286DE05A00E91320 /* FavoriteModel.xcdatamodeld */; };
+		FE78E2F3286DE53500E91320 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE78E2F2286DE53500E91320 /* FavoriteService.swift */; };
 		FEB16ED3286C5D4C00803EF7 /* GIFModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB16ED2286C5D4C00803EF7 /* GIFModel.swift */; };
 		FEB16ED5286C5D9B00803EF7 /* GIFService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB16ED4286C5D9B00803EF7 /* GIFService.swift */; };
 		FEB16ED7286C5E2200803EF7 /* GIFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB16ED6286C5E2200803EF7 /* GIFViewModel.swift */; };
@@ -41,6 +42,7 @@
 		FEC44E80286C09D200EEAF16 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E7F286C09D200EEAF16 /* SearchViewController.swift */; };
 		FEC44E86286C1B2200EEAF16 /* ListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E85286C1B2200EEAF16 /* ListCollectionViewController.swift */; };
 		FEC44E89286C1D9F00EEAF16 /* KeywordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E88286C1D9F00EEAF16 /* KeywordCell.swift */; };
+		FEF595C8286DEA57006EB124 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF595C7286DEA57006EB124 /* FavoriteViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,7 @@
 		FE78E2EB286D8F2800E91320 /* DetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewController.swift; sourceTree = "<group>"; };
 		FE78E2ED286D95D200E91320 /* DtailCellFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DtailCellFooter.swift; sourceTree = "<group>"; };
 		FE78E2F0286DE05A00E91320 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		FE78E2F2286DE53500E91320 /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
 		FEB16ED2286C5D4C00803EF7 /* GIFModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFModel.swift; sourceTree = "<group>"; };
 		FEB16ED4286C5D9B00803EF7 /* GIFService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFService.swift; sourceTree = "<group>"; };
 		FEB16ED6286C5E2200803EF7 /* GIFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFViewModel.swift; sourceTree = "<group>"; };
@@ -99,6 +102,7 @@
 		FEC44E7F286C09D200EEAF16 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FEC44E85286C1B2200EEAF16 /* ListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewController.swift; sourceTree = "<group>"; };
 		FEC44E88286C1D9F00EEAF16 /* KeywordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCell.swift; sourceTree = "<group>"; };
+		FEF595C7286DEA57006EB124 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +217,7 @@
 				FE66BEAB286C2FDA0085A532 /* KeywordViewModel.swift */,
 				FEB16ED6286C5E2200803EF7 /* GIFViewModel.swift */,
 				FE65FFD5286D5EF100EE94EB /* AutocompleteViewModel.swift */,
+				FEF595C7286DEA57006EB124 /* FavoriteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 				FE66BEA7286C2E1B0085A532 /* KeywordService.swift */,
 				FEB16ED4286C5D9B00803EF7 /* GIFService.swift */,
 				FE65FFD3286D5EE800EE94EB /* AutocompleteService.swift */,
+				FE78E2F2286DE53500E91320 /* FavoriteService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -410,6 +416,7 @@
 				FE5DFBF2286D524D002EEF6C /* AutocompleteTableViewController.swift in Sources */,
 				FE78E2EE286D95D200E91320 /* DtailCellFooter.swift in Sources */,
 				FE66BEA8286C2E1B0085A532 /* KeywordService.swift in Sources */,
+				FEF595C8286DEA57006EB124 /* FavoriteViewModel.swift in Sources */,
 				FE65FFD9286D6A9D00EE94EB /* SearchResultCollectionViewController.swift in Sources */,
 				FEC44E80286C09D200EEAF16 /* SearchViewController.swift in Sources */,
 				FE78E2EC286D8F2800E91320 /* DetailCollectionViewController.swift in Sources */,
@@ -426,6 +433,7 @@
 				FE65FFD0286D5B3100EE94EB /* AutocompleteCell.swift in Sources */,
 				FE65FFF2286D809100EE94EB /* Delegate.swift in Sources */,
 				FE65FFEF286D808100EE94EB /* ImageLoader.swift in Sources */,
+				FE78E2F3286DE53500E91320 /* FavoriteService.swift in Sources */,
 				FE66BEAC286C2FDA0085A532 /* KeywordViewModel.swift in Sources */,
 				FE66BEB3286C4DFE0085A532 /* ListCellHeader.swift in Sources */,
 				FEB16ED5286C5D9B00803EF7 /* GIFService.swift in Sources */,
