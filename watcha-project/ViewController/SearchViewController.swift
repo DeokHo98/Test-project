@@ -132,6 +132,9 @@ extension SearchViewController: UITextFieldDelegate {
 //MARK: - keywordDelegate
 
 extension SearchViewController: keyWordDelegate {
+    func scrollCollectionView() {
+        self.view.endEditing(true)
+    }
     func didSelectRowAt(viewModel: GIFViewModelList) {
         let vc = DetailCollectionViewController(viewModel: viewModel)
         navigationController?.pushViewController(vc, animated: true)

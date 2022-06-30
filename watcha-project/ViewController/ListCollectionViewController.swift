@@ -54,6 +54,7 @@ class ListCollectionViewController: UICollectionViewController {
             print("Debug: 인기 GIF \(error)")
         }
     }
+ 
 
     
     //MARK: - CollectionViewxDatSource
@@ -103,6 +104,7 @@ class ListCollectionViewController: UICollectionViewController {
     // MARK: - CollectionViewDelegate
 
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        delegate?.scrollCollectionView()
         if scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.bounds.height - (view.bounds.height / 4) {
                 if !mostPopularViewModel.pagingStart {
                     mostPopularViewModel.pagingStart = true
