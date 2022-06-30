@@ -45,7 +45,7 @@ class SearchResultCollectionViewController: UICollectionViewController {
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.tintColor = .systemBlue
         navigationController?.navigationBar.topItem?.title = ""
-        navigationController?.navigationBar.backgroundColor = .black
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
     private func setBinding() {
         viewModel.fetchSuccess.bind { [weak self] _ in
