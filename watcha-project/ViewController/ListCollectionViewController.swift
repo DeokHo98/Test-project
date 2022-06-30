@@ -55,7 +55,7 @@ class ListCollectionViewController: UICollectionViewController {
     }
 
     
-    //MARK: - DatSource
+    //MARK: - CollectionViewxDatSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
@@ -98,5 +98,17 @@ class ListCollectionViewController: UICollectionViewController {
             return UICollectionReusableView()
         }
     }
+    
+    // MARK: - CollectionViewDelegate
+
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            if scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.bounds.height - 300 {
+                if !mostPopularViewModel.pagingStart {
+                    mostPopularViewModel.pagingStart = true
+                    mostPopularViewModel.nextPageFetch()
+                }
+            }
+        }
+    
 }
 
