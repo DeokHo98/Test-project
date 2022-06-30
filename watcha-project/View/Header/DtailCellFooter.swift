@@ -15,11 +15,12 @@ class DetailCellfooter: UICollectionReusableView {
     
     //MARK: - Property
     
-    var viewModel: GIFViewModelItem? {
+    var GIFViewModel: GIFViewModelItem? {
         didSet {
             setViewModel()
         }
     }
+    var favoriteViewModel: FavoriteViewModel = FavoriteViewModel()
     private let profileImage: UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = .gray
@@ -39,19 +40,22 @@ class DetailCellfooter: UICollectionReusableView {
         lb.font = .boldSystemFont(ofSize: 15)
         return lb
     }()
-    private let favoriteButton: UIImageView = {
+    private lazy var favoriteButton: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "heart.fill")
         iv.tintColor = .white
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(favoriteButtonTapped))
+        iv.isUserInteractionEnabled = true
+        iv.addGestureRecognizer(tapGestureRecognizer)
         return iv
     }()
-    
     
     //MARK: - lifeCycle
         
     override init(frame: CGRect) {
         super.init(frame: frame)
         setLayout()
+        setBinding()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -71,9 +75,10 @@ class DetailCellfooter: UICollectionReusableView {
         favoriteButton.anchor(trailing: self.trailingAnchor, paddingTrailing: 20, width: 35, height: 35)
     }
     private func setViewModel() {
-        guard let viewModel = viewModel else {
+        guard let viewModel = GIFViewModel else {
             return
         }
+        favoriteViewModel.fetch()
         profileImage.image = nil
         namelabel.text = viewModel.userName
         emailLabel.text = viewModel.email
@@ -81,6 +86,28 @@ class DetailCellfooter: UICollectionReusableView {
             self?.profileImage.image = image
         }
     }
-    
+    @objc private func favoriteButtonTapped() {
+        if favoriteViewModel.validLikeState.value {
+            favoriteViewModel.fetch()
+            favoriteViewModel.unlike(id: GIFViewModel?.id ?? "")
+        } else {
+            favoriteViewModel.like(id: GIFViewModel?.id ?? "")
+        }
+    }
+    private func setBinding() {
+        favoriteViewModel.serviceError.bind { error in
+            print("debug: 코어데이터 에러")
+        }
+        favoriteViewModel.fetchSuccess.bind { [weak self] _ in
+            self?.favoriteViewModel.validLikeState(id: self?.GIFViewModel?.id ?? "")
+        }
+        favoriteViewModel.validLikeState.bind { [weak self] bool in
+            if bool {
+                self?.favoriteButton.tintColor = .red
+            } else {
+                self?.favoriteButton.tintColor = .white
+            }
+        }
+    }
 }
 

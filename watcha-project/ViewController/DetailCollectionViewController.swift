@@ -102,7 +102,7 @@ class DetailCollectionViewController: UICollectionViewController {
         if kind == UICollectionView.elementKindSectionFooter {
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: DetailCellfooter.identifier, for: indexPath) as! DetailCellfooter
             GIFViewModel.cellOffSet.bind { [weak self] offset in
-                footer.viewModel = self?.GIFViewModel.itemAtIndex(offset)
+                footer.GIFViewModel = self?.GIFViewModel.itemAtIndex(offset)
             }
             return footer
         }
