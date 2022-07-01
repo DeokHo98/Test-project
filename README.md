@@ -24,3 +24,6 @@
 3. 모든 아이템 목록화면에 무한스크롤기능    
 
 ![Simulator Screen Recording - iPhone 13 - 2022-07-01 at 12 45 32](https://user-images.githubusercontent.com/93653997/176819671-38a1a78a-5add-4daf-a20d-7a1d55a4dfef.gif)
+
+## 구현 방법
+1. API호출   
