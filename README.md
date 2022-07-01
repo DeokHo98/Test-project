@@ -93,7 +93,7 @@ enum APIURL {
     }
     case mostPopular
     case trendKeyword
-    case autocompleteKeword
+    case autocompleteKeyword
     case search
 }
 ```
