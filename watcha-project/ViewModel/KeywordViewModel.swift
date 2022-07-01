@@ -9,7 +9,7 @@ import Foundation
 
 final class KeywordViewModelList {
     private var items: [TrendingKeyWordViewModelItem] = []
-    var serviceError: Observer<ServiceError> = Observer(value: .URLError)
+    var serviceError: Observer<WebServiceError> = Observer(value: .URLError)
     var fetchSuccess: Observer<Bool> = Observer(value: false)
     var fetchState: APIURL = .trendKeyword
 }
@@ -23,7 +23,7 @@ extension KeywordViewModelList {
     }
     func fetchTrandingKeword() {
         let resource = Resource<KeywordModel>(url: fetchState.url)
-        Service.fetch(resource: resource) { [weak self] result in
+        WebService.fetch(resource: resource) { [weak self] result in
             switch result {
             case .success(let model):
                 let items = model.data.prefix(5).map {

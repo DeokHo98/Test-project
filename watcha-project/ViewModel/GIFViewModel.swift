@@ -10,7 +10,7 @@ import Foundation
 
 final class GIFViewModelList {
     var items: [GIFViewModelItem] = []
-    var serviceError: Observer<ServiceError> = Observer(value: .URLError)
+    var serviceError: Observer<WebServiceError> = Observer(value: .URLError)
     var fetchSuccess: Observer<Bool> = Observer(value: true)
     var fetchState: APIURL = .mostPopular
     var pagingStart: Bool = false
@@ -26,7 +26,7 @@ extension GIFViewModelList {
     }
     func fetchMostGIF(text: String = "") {
         let resource = Resource<GIFModel>(url: fetchState.url + text)
-        Service.fetch(resource: resource) { [weak self] result in
+        WebService.fetch(resource: resource) { [weak self] result in
             switch result {
             case .success(let model):
                 let items = model.data.map {
@@ -46,7 +46,7 @@ extension GIFViewModelList {
     func nextPageFetch(text: String = "") {
         offset += 20
         let resource = Resource<GIFModel>(url: fetchState.url + text + "&offset=\(offset)")
-        Service.fetch(resource: resource) { [weak self] result in
+        WebService.fetch(resource: resource) { [weak self] result in
             switch result {
             case .success(let model):
                 model.data.forEach {

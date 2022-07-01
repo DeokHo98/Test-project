@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ServiceError: Error {
+enum WebServiceError: Error {
     case URLError
     case fetchError
     case dataError
@@ -20,8 +20,8 @@ struct Resource<T: Decodable> {
 
 }
 
-struct Service {
-   static func fetch<T>(resource: Resource<T>, completion: @escaping (Result<T,ServiceError>) -> Void) {
+struct WebService {
+   static func fetch<T>(resource: Resource<T>, completion: @escaping (Result<T,WebServiceError>) -> Void) {
         guard let url = URL(string: resource.url) else {
             completion(.failure(.URLError))
             return
