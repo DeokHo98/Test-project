@@ -85,7 +85,7 @@ enum APIURL {
             return "https://api.giphy.com/v1/gifs/trending?\(APIKey.key)&limit=20&rating=g"
         case .trendKeyword:
             return "https://api.giphy.com/v1/trending/searches?\(APIKey.key)"
-        case .autocompleteKeword:
+        case .autocompleteKeyword:
             return "https://api.giphy.com/v1/gifs/search/tags?\(APIKey.key)&limit=10"
         case .search:
             return "https://api.giphy.com/v1/gifs/search?\(APIKey.key)&limit=20&rating=g&q="
@@ -100,7 +100,7 @@ enum APIURL {
 ViewModel
 ```swift
 final class AutocompleteViewModelList {
-    var fetchState: APIURL = .autocompleteKeword
+    var fetchState: APIURL = .autocompleteKeyword
     
     func fetchAutoCompleteKeyword(text: String) {
         let resource = Resource<AutocompleteModel>(url: fetchState.url + "&q=\(text)")
