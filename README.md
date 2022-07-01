@@ -8,7 +8,7 @@
 
 2. 검색된 아이템 상세화면 및 Favorite On/Off 기능 (앱을 다시시작해도 유지)   
 
-![Simulator Screen Recording - iPhone 13 - 2022-07-01 at 12 39 36](https://user-images.githubusercontent.com/93653997/176818873-698e14f7-f4b9-4652-8c70-5dbd73ad927f.gif)
+![Simulator Screen Recording - iPhone 13 - 2022-07-01 at 12 51 07](https://user-images.githubusercontent.com/93653997/176819992-755d8883-cd6d-4f8e-8081-8f2193d397ff.gif)
 
 
 ## 추가 구현 기능
