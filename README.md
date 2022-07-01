@@ -1,6 +1,15 @@
 # watcha-project
+[필수구현기능](##팔수구현기능)     
+[추가구현기능](##추가구현기능)     
+[구현방법](##구현방법)
+      
+[스위프트 문법 중급](#클래스와-구조체)      
+   
+      
+[스위프트 문법 고급](#고차함수)   
 
-## 필수 구현 기능
+
+## 필수구현기능
 
 1. KeyWord 검색 및 검색된 아이템 목록 화면   
 
@@ -11,7 +20,7 @@
 ![Simulator Screen Recording - iPhone 13 - 2022-07-01 at 12 51 07](https://user-images.githubusercontent.com/93653997/176819992-755d8883-cd6d-4f8e-8081-8f2193d397ff.gif)
 
 
-## 추가 구현 기능
+## 추가구현기능
 
 1. 인기있는검색어 키워드를 사용해 검색할수 있는기능 / 인기있는 gif목록을 보여주는 기능   
 
@@ -25,7 +34,7 @@
 
 ![Simulator Screen Recording - iPhone 13 - 2022-07-01 at 12 45 32](https://user-images.githubusercontent.com/93653997/176819671-38a1a78a-5add-4daf-a20d-7a1d55a4dfef.gif)
 
-## 구현 방법
+## 구현방법
 ### API호출  
 1. 여러개의 API호출을 한개의 메서드로 호출할수 있게 제네릭문법을 활용해 구현 했습니다   
    
