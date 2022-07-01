@@ -255,7 +255,7 @@ View
 ```swift
 private func setBinding() {
         favoriteViewModel.serviceError.bind { error in
-            print("debug: 코어데이터 에러")
+            print("debug: 코어데이터 에러 \(error)")
         }
         favoriteViewModel.fetchSuccess.bind { [weak self] _ in
             self?.favoriteViewModel.validLikeState(id: self?.GIFViewModel?.id ?? "")
