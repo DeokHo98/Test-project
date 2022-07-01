@@ -44,5 +44,4 @@ struct CoreDataService {
             completion(.failure(.deleteError))
         }
     }
-    
 }
