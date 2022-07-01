@@ -13,11 +13,6 @@ final class FavoriteViewModel {
     var serviceError: Observer<CoreDataError> = Observer(value: .deleteError)
     var validLikeState: Observer<Bool> = Observer(value: false)
     var fetchSuccess: Observer<Bool> = Observer(value: false)
-    var id: [String] {
-        return self.model.map {
-            $0.id ?? ""
-        }
-    }
 }
 
 extension FavoriteViewModel {

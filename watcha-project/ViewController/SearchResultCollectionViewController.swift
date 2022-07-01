@@ -49,7 +49,6 @@ class SearchResultCollectionViewController: UICollectionViewController {
         navigationController?.navigationBar.backgroundColor = .black
         navigationController?.navigationBar.barTintColor = .black
         navigationController?.navigationBar.isTranslucent = false
-
         navigationItem.title = text
     }
     private func setBinding() {

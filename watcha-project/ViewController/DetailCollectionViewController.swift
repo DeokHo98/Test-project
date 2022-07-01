@@ -12,6 +12,7 @@ class DetailCollectionViewController: UICollectionViewController {
 
     //MARK: - Property
     var GIFViewModel: GIFViewModelList
+    var offset: Int = 0
    private lazy var layout = UICollectionViewCompositionalLayout { section, env in
             let itemSize = NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1),
@@ -48,6 +49,7 @@ class DetailCollectionViewController: UICollectionViewController {
     
     init(viewModel: GIFViewModelList) {
         self.GIFViewModel = viewModel
+        self.offset = viewModel.cellOffSet.value
         super.init(collectionViewLayout: UICollectionViewLayout())
     }
     required init?(coder: NSCoder) {
@@ -81,7 +83,9 @@ class DetailCollectionViewController: UICollectionViewController {
     }
     private func setCollectionView() {
         collectionView.collectionViewLayout = layout
-        collectionView.scrollToItem(at: NSIndexPath(item: GIFViewModel.cellOffSet.value, section: 0) as IndexPath, at: .right, animated: false)
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView.scrollToItem(at: NSIndexPath(item: self?.offset ?? 0, section: 0) as IndexPath, at: .centeredHorizontally, animated: false)
+         }
     }
   
     //MARK: - CollectionViewxDatSource

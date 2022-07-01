@@ -42,6 +42,7 @@ class ListCollectionViewController: UICollectionViewController {
     }
     private func setBinding() {
         trendingViewModel.fetchSuccess.bind { [weak self] _ in
+            print("디버그")
             self?.collectionView.reloadSections(IndexSet(integer: 0))
         }
         trendingViewModel.serviceError.bind { error in
