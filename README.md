@@ -27,7 +27,8 @@
 
 ## 구현 방법
 ### API호출  
-1. 여러개의 API호출을 한개의 메서드로 호출할수 있게 제네릭문법을 활용해 구현 했습니다
+1. 여러개의 API호출을 한개의 메서드로 호출할수 있게 제네릭문법을 활용해 구현 했습니다   
+   
 Service
 ```swift
 enum ServiceError: Error {
@@ -69,7 +70,7 @@ struct Service {
 }
 ```
 2. 인기검색어/인기GIF/검색/자동완성키워드 이렇게 총4개의 호출이 있었는데 이것들의 URL을 열거형으로 분기시켜 어떤 상태인지에 따라 받는 URL을 달리 구현했습니다.
-
+    
 APIKey
 ```swift
 enum APIURL {
@@ -120,6 +121,7 @@ final class AutocompleteViewModelList {
 ### 즐겨찾기 기능
 각각의 아이템마다 고유의 id가 있어서 그 id를 Coredata를 사용해 로컬에 저장해서 사용하는 방식으로 구현 했습니다.   
 또한 현재 보고있는 아이템의 id와 CoreData에 저장되어있는 id를 반복문을 통해 비교해 즐겨찾기 버튼의 상태를 바꿨습니다.   
+    
 CoreDataService   
 ```swift
 enum CoreDataError: Error {
