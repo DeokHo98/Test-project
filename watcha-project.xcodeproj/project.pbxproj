@@ -32,32 +32,12 @@
 		FEC44E4C286C07DD00EEAF16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E4B286C07DD00EEAF16 /* SceneDelegate.swift */; };
 		FEC44E53286C07DE00EEAF16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC44E52286C07DE00EEAF16 /* Assets.xcassets */; };
 		FEC44E56286C07DE00EEAF16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC44E54286C07DE00EEAF16 /* LaunchScreen.storyboard */; };
-		FEC44E61286C07DE00EEAF16 /* watcha_projectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E60286C07DE00EEAF16 /* watcha_projectTests.swift */; };
-		FEC44E6B286C07DE00EEAF16 /* watcha_projectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E6A286C07DE00EEAF16 /* watcha_projectUITests.swift */; };
-		FEC44E6D286C07DE00EEAF16 /* watcha_projectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E6C286C07DE00EEAF16 /* watcha_projectUITestsLaunchTests.swift */; };
 		FEC44E80286C09D200EEAF16 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E7F286C09D200EEAF16 /* SearchViewController.swift */; };
 		FEC44E86286C1B2200EEAF16 /* ListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E85286C1B2200EEAF16 /* ListCollectionViewController.swift */; };
 		FEC44E89286C1D9F00EEAF16 /* KeywordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC44E88286C1D9F00EEAF16 /* KeywordCell.swift */; };
 		FEF595C8286DEA57006EB124 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF595C7286DEA57006EB124 /* FavoriteViewModel.swift */; };
 		FEF595CA286DFEBF006EB124 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF595C9286DFEBF006EB124 /* WebService.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		FEC44E5D286C07DE00EEAF16 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FEC44E3E286C07DD00EEAF16 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FEC44E45286C07DD00EEAF16;
-			remoteInfo = "watcha-project";
-		};
-		FEC44E67286C07DE00EEAF16 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FEC44E3E286C07DD00EEAF16 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FEC44E45286C07DD00EEAF16;
-			remoteInfo = "watcha-project";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FE5DFBF1286D524D002EEF6C /* AutocompleteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteTableViewController.swift; sourceTree = "<group>"; };
@@ -87,11 +67,6 @@
 		FEC44E52286C07DE00EEAF16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEC44E55286C07DE00EEAF16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEC44E57286C07DE00EEAF16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEC44E5C286C07DE00EEAF16 /* watcha-projectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "watcha-projectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEC44E60286C07DE00EEAF16 /* watcha_projectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = watcha_projectTests.swift; sourceTree = "<group>"; };
-		FEC44E66286C07DE00EEAF16 /* watcha-projectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "watcha-projectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEC44E6A286C07DE00EEAF16 /* watcha_projectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = watcha_projectUITests.swift; sourceTree = "<group>"; };
-		FEC44E6C286C07DE00EEAF16 /* watcha_projectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = watcha_projectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FEC44E7F286C09D200EEAF16 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FEC44E85286C1B2200EEAF16 /* ListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewController.swift; sourceTree = "<group>"; };
 		FEC44E88286C1D9F00EEAF16 /* KeywordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCell.swift; sourceTree = "<group>"; };
@@ -101,20 +76,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		FEC44E43286C07DD00EEAF16 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FEC44E59286C07DE00EEAF16 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FEC44E63286C07DE00EEAF16 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -146,8 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				FEC44E48286C07DD00EEAF16 /* watcha-project */,
-				FEC44E5F286C07DE00EEAF16 /* watcha-projectTests */,
-				FEC44E69286C07DE00EEAF16 /* watcha-projectUITests */,
 				FEC44E47286C07DD00EEAF16 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -156,8 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				FEC44E46286C07DD00EEAF16 /* watcha-project.app */,
-				FEC44E5C286C07DE00EEAF16 /* watcha-projectTests.xctest */,
-				FEC44E66286C07DE00EEAF16 /* watcha-projectUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,23 +131,6 @@
 				FE65FFD7286D6A0900EE94EB /* View */,
 			);
 			path = "watcha-project";
-			sourceTree = "<group>";
-		};
-		FEC44E5F286C07DE00EEAF16 /* watcha-projectTests */ = {
-			isa = PBXGroup;
-			children = (
-				FEC44E60286C07DE00EEAF16 /* watcha_projectTests.swift */,
-			);
-			path = "watcha-projectTests";
-			sourceTree = "<group>";
-		};
-		FEC44E69286C07DE00EEAF16 /* watcha-projectUITests */ = {
-			isa = PBXGroup;
-			children = (
-				FEC44E6A286C07DE00EEAF16 /* watcha_projectUITests.swift */,
-				FEC44E6C286C07DE00EEAF16 /* watcha_projectUITestsLaunchTests.swift */,
-			);
-			path = "watcha-projectUITests";
 			sourceTree = "<group>";
 		};
 		FEC44E79286C08FD00EEAF16 /* ViewController */ = {
@@ -291,42 +231,6 @@
 			productReference = FEC44E46286C07DD00EEAF16 /* watcha-project.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FEC44E5B286C07DE00EEAF16 /* watcha-projectTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FEC44E73286C07DE00EEAF16 /* Build configuration list for PBXNativeTarget "watcha-projectTests" */;
-			buildPhases = (
-				FEC44E58286C07DE00EEAF16 /* Sources */,
-				FEC44E59286C07DE00EEAF16 /* Frameworks */,
-				FEC44E5A286C07DE00EEAF16 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FEC44E5E286C07DE00EEAF16 /* PBXTargetDependency */,
-			);
-			name = "watcha-projectTests";
-			productName = "watcha-projectTests";
-			productReference = FEC44E5C286C07DE00EEAF16 /* watcha-projectTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		FEC44E65286C07DE00EEAF16 /* watcha-projectUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FEC44E76286C07DE00EEAF16 /* Build configuration list for PBXNativeTarget "watcha-projectUITests" */;
-			buildPhases = (
-				FEC44E62286C07DE00EEAF16 /* Sources */,
-				FEC44E63286C07DE00EEAF16 /* Frameworks */,
-				FEC44E64286C07DE00EEAF16 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FEC44E68286C07DE00EEAF16 /* PBXTargetDependency */,
-			);
-			name = "watcha-projectUITests";
-			productName = "watcha-projectUITests";
-			productReference = FEC44E66286C07DE00EEAF16 /* watcha-projectUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -339,14 +243,6 @@
 				TargetAttributes = {
 					FEC44E45286C07DD00EEAF16 = {
 						CreatedOnToolsVersion = 13.2.1;
-					};
-					FEC44E5B286C07DE00EEAF16 = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = FEC44E45286C07DD00EEAF16;
-					};
-					FEC44E65286C07DE00EEAF16 = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = FEC44E45286C07DD00EEAF16;
 					};
 				};
 			};
@@ -364,8 +260,6 @@
 			projectRoot = "";
 			targets = (
 				FEC44E45286C07DD00EEAF16 /* watcha-project */,
-				FEC44E5B286C07DE00EEAF16 /* watcha-projectTests */,
-				FEC44E65286C07DE00EEAF16 /* watcha-projectUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -377,20 +271,6 @@
 			files = (
 				FEC44E56286C07DE00EEAF16 /* LaunchScreen.storyboard in Resources */,
 				FEC44E53286C07DE00EEAF16 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FEC44E5A286C07DE00EEAF16 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FEC44E64286C07DE00EEAF16 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,37 +312,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FEC44E58286C07DE00EEAF16 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FEC44E61286C07DE00EEAF16 /* watcha_projectTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FEC44E62286C07DE00EEAF16 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FEC44E6D286C07DE00EEAF16 /* watcha_projectUITestsLaunchTests.swift in Sources */,
-				FEC44E6B286C07DE00EEAF16 /* watcha_projectUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FEC44E5E286C07DE00EEAF16 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FEC44E45286C07DD00EEAF16 /* watcha-project */;
-			targetProxy = FEC44E5D286C07DE00EEAF16 /* PBXContainerItemProxy */;
-		};
-		FEC44E68286C07DE00EEAF16 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FEC44E45286C07DD00EEAF16 /* watcha-project */;
-			targetProxy = FEC44E67286C07DE00EEAF16 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FEC44E54286C07DE00EEAF16 /* LaunchScreen.storyboard */ = {
@@ -648,82 +498,6 @@
 			};
 			name = Release;
 		};
-		FEC44E74286C07DE00EEAF16 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L3L2WN7T88;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.DeokHo98.watcha-projectTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/watcha-project.app/watcha-project";
-			};
-			name = Debug;
-		};
-		FEC44E75286C07DE00EEAF16 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L3L2WN7T88;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.DeokHo98.watcha-projectTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/watcha-project.app/watcha-project";
-			};
-			name = Release;
-		};
-		FEC44E77286C07DE00EEAF16 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L3L2WN7T88;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.DeokHo98.watcha-projectUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "watcha-project";
-			};
-			name = Debug;
-		};
-		FEC44E78286C07DE00EEAF16 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L3L2WN7T88;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.DeokHo98.watcha-projectUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "watcha-project";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -741,24 +515,6 @@
 			buildConfigurations = (
 				FEC44E71286C07DE00EEAF16 /* Debug */,
 				FEC44E72286C07DE00EEAF16 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FEC44E73286C07DE00EEAF16 /* Build configuration list for PBXNativeTarget "watcha-projectTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FEC44E74286C07DE00EEAF16 /* Debug */,
-				FEC44E75286C07DE00EEAF16 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FEC44E76286C07DE00EEAF16 /* Build configuration list for PBXNativeTarget "watcha-projectUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FEC44E77286C07DE00EEAF16 /* Debug */,
-				FEC44E78286C07DE00EEAF16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
