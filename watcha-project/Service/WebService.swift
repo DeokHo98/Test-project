@@ -11,7 +11,6 @@ enum WebServiceError: Error {
     case URLError
     case fetchError
     case dataError
-    case responseError
     case jsonDecodeError
 }
 
@@ -40,9 +39,7 @@ struct WebService {
                 completion(.failure(.jsonDecodeError))
                 return
             }
-            DispatchQueue.main.async {
                 completion(.success(result))
-            }
         }.resume()
     }
 }
