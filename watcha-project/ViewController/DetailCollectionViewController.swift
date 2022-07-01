@@ -106,7 +106,11 @@ class DetailCollectionViewController: UICollectionViewController {
         if kind == UICollectionView.elementKindSectionFooter {
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: DetailCellfooter.identifier, for: indexPath) as! DetailCellfooter
             GIFViewModel.cellOffSet.bind { [weak self] offset in
-                footer.GIFViewModel = self?.GIFViewModel.itemAtIndex(offset)
+                if offset < 0 {
+                    footer.GIFViewModel = self?.GIFViewModel.itemAtIndex(0)
+                } else {
+                    footer.GIFViewModel = self?.GIFViewModel.itemAtIndex(offset)
+                }
             }
             return footer
         }
