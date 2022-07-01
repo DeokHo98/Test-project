@@ -11,7 +11,7 @@ final class AutocompleteViewModelList {
     var items: [AutocompleteViewModelItem] = []
     var serviceError: Observer<WebServiceError> = Observer(value: .URLError)
     var fetchSuccess: Observer<Bool> = Observer(value: false)
-    var fetchState: APIURL = .autocompleteKeword
+    var fetchState: APIURL = .autocompleteKeyword
 }
 
 extension AutocompleteViewModelList {

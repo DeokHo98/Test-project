@@ -17,7 +17,7 @@ enum APIURL {
             return "https://api.giphy.com/v1/gifs/trending?\(APIKey)&limit=20&rating=g"
         case .trendKeyword:
             return "https://api.giphy.com/v1/trending/searches?\(APIKey)"
-        case .autocompleteKeword:
+        case .autocompleteKeyword:
             return "https://api.giphy.com/v1/gifs/search/tags?\(APIKey)&limit=10"
         case .search:
             return "https://api.giphy.com/v1/gifs/search?\(APIKey)&limit=20&rating=g&q="
@@ -25,6 +25,6 @@ enum APIURL {
     }
     case mostPopular
     case trendKeyword
-    case autocompleteKeword
+    case autocompleteKeyword
     case search
 }
