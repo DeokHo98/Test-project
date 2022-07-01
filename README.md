@@ -13,7 +13,7 @@
 
 ## 추가 구현 기능
 
-1. 인기있는검색어 키워들르 사용해 검색할수 있는기능 / 인기있는 gif목록을 보여주는 기능   
+1. 인기있는검색어 키워드를 사용해 검색할수 있는기능 / 인기있는 gif목록을 보여주는 기능   
 
 ![Simulator Screen Recording - iPhone 13 - 2022-07-01 at 12 43 35](https://user-images.githubusercontent.com/93653997/176819607-2311c2b1-c82d-41e1-bd09-8b29ed6801a0.gif)
 
