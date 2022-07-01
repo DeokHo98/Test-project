@@ -35,19 +35,3 @@ struct ImageLoader {
         }
     }
 }
-
-
-extension UIImage {
-
-    static func animatedGif(from data: Data, framesPerSecond: Double = 10) -> UIImage? {
-        guard let source = CGImageSourceCreateWithData(data as CFData, nil) else { return nil }
-        let imageCount = CGImageSourceGetCount(source)
-        var images: [UIImage] = []
-        for i in 0 ..< imageCount {
-            if let cgImage = CGImageSourceCreateImageAtIndex(source, i, nil) {
-                images.append(UIImage(cgImage: cgImage))
-            }
-        }
-        return UIImage.animatedImage(with: images, duration: Double(images.count) / framesPerSecond)
-    }
-}
