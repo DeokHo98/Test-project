@@ -26,4 +26,53 @@
 ![Simulator Screen Recording - iPhone 13 - 2022-07-01 at 12 45 32](https://user-images.githubusercontent.com/93653997/176819671-38a1a78a-5add-4daf-a20d-7a1d55a4dfef.gif)
 
 ## 구현 방법
-1. API호출   
+### API호출  
+1. API 호출의 경우 인기검색어/인기GIF/검색/자동완성키워드 이렇게 총4개의 호출이 있었는데 이것들의 URL을 열거형으로 분기시켜 어떤 상태인지에 따라 받는 URL을 달리 구현했습니다.
+
+APIKey
+```swift
+enum APIURL {
+    var url: String {
+        switch self {
+        case .mostPopular:
+            return "https://api.giphy.com/v1/gifs/trending?\(APIKey.key)&limit=20&rating=g"
+        case .trendKeyword:
+            return "https://api.giphy.com/v1/trending/searches?\(APIKey.key)"
+        case .autocompleteKeword:
+            return "https://api.giphy.com/v1/gifs/search/tags?\(APIKey.key)&limit=10"
+        case .search:
+            return "https://api.giphy.com/v1/gifs/search?\(APIKey.key)&limit=20&rating=g&q="
+        }
+    }
+    case mostPopular
+    case trendKeyword
+    case autocompleteKeword
+    case search
+}
+```
+ViewModel
+```swift
+final class AutocompleteViewModelList {
+    var fetchState: APIURL = .autocompleteKeword
+    
+    func fetchAutoCompleteKeyword(text: String) {
+        let resource = Resource<AutocompleteModel>(url: fetchState.url + "&q=\(text)")
+        Service.fetch(resource: resource) { [weak self] result in
+            switch result {
+            case .success(let model):
+                let items = model.data.map {
+                    AutocompleteViewModelItem(model: $0)
+                }
+                self?.items = items
+                DispatchQueue.main.async {
+                    self?.fetchSuccess.value = true
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.serviceError.value = error
+                }
+            }
+        }
+    }
+}
+```
