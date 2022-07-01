@@ -52,34 +52,22 @@ struct The480_WStill: Codable {
 // MARK: - User
 
 struct User: Decodable {
-    let avatarURL, bannerImage, bannerURL: String
-    let profileURL: String
-    let username, displayName, userDescription: String
-    let instagramURL: String
-    let websiteURL: String
-    let isVerified: Bool
+    let avatarURL: String
+    let username, displayName: String
 
     enum CodingKeys: String, CodingKey {
         case avatarURL = "avatar_url"
-        case bannerImage = "banner_image"
-        case bannerURL = "banner_url"
-        case profileURL = "profile_url"
         case username
         case displayName = "display_name"
-        case userDescription = "description"
-        case instagramURL = "instagram_url"
-        case websiteURL = "website_url"
-        case isVerified = "is_verified"
     }
 }
 
 // MARK: - Pagination
 
 struct Pagination: Decodable {
-    let totalCount, count, offset: Int
+    let  offset: Int
 
     enum CodingKeys: String, CodingKey {
-        case totalCount = "total_count"
-        case count, offset
+        case offset
     }
 }
