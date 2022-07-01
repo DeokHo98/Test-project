@@ -53,7 +53,7 @@ class SearchResultCollectionViewController: UICollectionViewController {
     }
     private func setBinding() {
         viewModel.fetchSuccess.bind { [weak self] _ in
-            self?.collectionView.reloadSections(IndexSet(integer: 0))
+            self?.collectionView.reloadData()
         }
         viewModel.serviceError.bind { error in
             print("Debug: 검색 GIF \(error)")
