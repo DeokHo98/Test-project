@@ -8,3 +8,12 @@
 2. 검색된 아이템 상세화면 및 Favorite On/Off 기능 (앱을 다시시작해도 유지)
 
 ![Simulator Screen Recording - iPhone 13 - 2022-07-01 at 12 39 36](https://user-images.githubusercontent.com/93653997/176818873-698e14f7-f4b9-4652-8c70-5dbd73ad927f.gif)
+
+
+## 추가 구현 기능
+
+1. 인기있는검색어 키워들르 사용해 검색할수 있는기능 / 인기있는 gif목록을 보여주는 기능
+
+2. 검색어 자동완성기능
+
+3. 모든 아이템 목록화면에 무한스크롤기능
